@@ -1,0 +1,45 @@
+---
+interface Props {
+  currentPath?: string;
+}
+const { currentPath = '' } = Astro.props;
+const pathname = currentPath || Astro.url.pathname;
+const isHome = pathname === '/' || pathname === '/index.html' || pathname === '';
+const isHarvest = pathname.includes('our-harvest');
+const isGrowers = pathname.includes('for-growers');
+const isAbout = pathname.includes('about');
+const isContact = pathname.includes('contact');
+---
+
+<!-- Overlay for drawer menu -->
+<div class="overlay"></div>
+
+<!-- Header Section -->
+<header>
+  <div class="container navbar">
+    <a href="/" class="logo">
+      <span class="logo-mark"><i class="fa-solid fa-seedling"></i></span>
+      <span class="logo-text">NAUTERA</span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="/our-harvest" class={`nav-link ${isHarvest ? 'active' : ''}`}>Our Harvest</a></li>
+      <li><a href="/for-growers" class={`nav-link ${isGrowers ? 'active' : ''}`}>For Growers</a></li>
+      <li><a href="/about" class={`nav-link ${isAbout ? 'active' : ''}`}>About Us</a></li>
+      <li><a href="/contact" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Contact</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Drawer Menu -->
+<nav class="mobile-nav">
+  <a href="/" class={`mobile-nav-link ${isHome ? 'active' : ''}`}>Home</a>
+  <a href="/our-harvest" class={`mobile-nav-link ${isHarvest ? 'active' : ''}`}>Our Harvest</a>
+  <a href="/for-growers" class={`mobile-nav-link ${isGrowers ? 'active' : ''}`}>For Growers</a>
+  <a href="/about" class={`mobile-nav-link ${isAbout ? 'active' : ''}`}>About Us</a>
+  <a href="/contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</a>
+</nav>

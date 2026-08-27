@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kami &mdash; NAUTERA Indonesia</title>
+  <meta name="description" content="Kisah Nautera Indonesia &mdash; ekosistem udang vaname hulu-hilir dari tambak Cipatujah hingga Shrimply Distribution Hub.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tentang Kami &mdash; NAUTERA Indonesia">
+  <meta property="og:description" content="Komitmen muamalah yang lurus dan kepastian mutu udang vaname Indonesia dari pesisir hingga ke meja makan.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =============================================
+       ABOUT PAGE &mdash; DESIGN SYSTEM OVERRIDES
+    ============================================= */
+
+    /* ------ Hulu Hilir ------ */
+    .hulu-hilir-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .hulu-hilir-card {
+      background: var(--color-bg-white);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(30, 70, 20, 0.07);
+      border: 1px solid rgba(119, 171, 89, 0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .hulu-hilir-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(30, 70, 20, 0.12);
+    }
+
+    .hulu-hilir-content {
+      padding: 2rem 2.25rem 2.5rem;
+    }
+
+    .hulu-hilir-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: var(--color-primary-very-light);
+      border: 1px solid rgba(119,171,89,0.25);
+      border-radius: 50px;
+      padding: 0.3rem 0.9rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .hulu-hilir-content h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    .hulu-hilir-content p {
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ------ Certification Strip ------ */
+    .cert-strip {
+      margin-top: 4rem;
+      background: var(--color-primary-very-light);
+      border: 1px solid rgba(119,171,89,0.18);
+      border-radius: 20px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cert-strip-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cert-strip-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(119,171,89,0.25);
+      flex-shrink: 0;
+    }
+
+    .cert-strip-badges {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cert-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-bg-white);
+      border: 1px solid rgba(119,171,89,0.22);
+      border-radius: 50px;
+      padding: 0.45rem 1.1rem 0.45rem 0.55rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      letter-spacing: 0.03em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .cert-badge-item img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .cert-badge-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-primary-very-light);
+      border: 1.5px solid var(--color-primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* ------ Why Nautera ------ */
+    .why-nautera-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .why-card {
+      position: relative;
+      background: var(--color-bg-white);
+      border-radius: 20px;
+      padding: 2.75rem 2rem;
+      border: 1px solid rgba(119, 171, 89, 0.1);
+      box-shadow: 0 4px 20px rgba(30, 70, 20, 0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary-light), var(--color-primary));
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(30, 70, 20, 0.12);
+      border-color: rgba(119, 171, 89, 0.25);
+    }
+
+    .why-card:hover::before { opacity: 1; }
+
+    .why-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--color-primary-very-light);
+      border: 1px solid rgba(119,171,89,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .why-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .why-card p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--color-text-light);
+      margin-bottom: 0;
+    }
+
+    .why-card-note {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    /* ------ Values Grid ------ */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 1rem;
+      margin-top: 3.5rem;
+    }
+
+    .value-card {
+      background: var(--color-bg-white);
+      border: 1px solid rgba(119, 171, 89, 0.1);
+      border-radius: 18px;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 260px;
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(30, 70, 20, 0.1);
+      border-color: var(--color-primary-light);
+    }
+
+    .value-letter {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--color-primary-dark);
+      background: var(--color-primary-very-light);
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .value-card:hover .value-letter {
+      background: var(--color-primary-dark);
+      color: #fff;
+    }
+
+    .value-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.15rem;
+    }
+
+    .value-card .value-sub {
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.85rem;
+      display: block;
+    }
+
+    .value-card p {
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+
+    /* ------ Leadership ------ */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .leader-card {
+      background: var(--color-bg-white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(119, 171, 89, 0.1);
+      box-shadow: 0 6px 24px rgba(30, 70, 20, 0.07);
+      text-align: center;
+      padding: 2rem 1.25rem 1.75rem;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .leader-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 36px rgba(30, 70, 20, 0.12);
+      border-color: rgba(119,171,89,0.22);
+    }
+
+    .leader-avatar-wrapper {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 1.25rem;
+      border: 3px solid var(--color-primary-very-light);
+      background: var(--color-primary-very-light);
+    }
+
+    .leader-avatar-wrapper .image-placeholder {
+      min-height: 100%;
+      border-radius: 0;
+      font-size: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .leader-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .leader-card .leader-role {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* ------ Roda Ekosistem ------ */
+    .roda-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .roda-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .roda-card .img-slot {
+      border-radius: 0;
+      border: none;
+    }
+
+    .roda-card-content {
+      padding: 1.75rem 2rem 2.25rem;
+    }
+
+    .roda-card-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .roda-card-content p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+
+    /* ------ Career CTA ------ */
+    .career-section {
+      background-color: var(--color-primary-very-light);
+      border-top: 1px solid var(--color-primary-light);
+      text-align: center;
+      scroll-margin-top: 80px;
+    }
+
+    /* ------ Trust Marquee ------ */
+    .trust-marquee-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      padding: 2.5rem 0 3.5rem;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    }
+
+    .trust-marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      width: max-content;
+      will-change: transform;
+      -webkit-animation: trustScroll 24s linear infinite;
+      animation: trustScroll 24s linear infinite;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .trust-marquee-wrapper:hover .trust-marquee-track {
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+      }
+    }
+
+    @-webkit-keyframes trustScroll {
+      0%   { -webkit-transform: translate3d(0, 0, 0); }
+      100% { -webkit-transform: translate3d(-50%, 0, 0); }
+    }
+
+    @keyframes trustScroll {
+      0%   { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    .trust-logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .trust-circle-slot {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .trust-circle-slot:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+    }
+
+    .trust-circle-slot img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      border-radius: 50%;
+      z-index: 2;
+      background: #fff;
+    }
+
+    .trust-circle-badge {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      text-align: center;
+      font-size: 1.4rem;
+      z-index: 1;
+    }
+
+    .badge-amal    { background: var(--color-primary-dark); color: #fff; border: 2px solid var(--color-primary-light); }
+    .badge-golden  { background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary-light); }
+    .badge-peduli  { background: var(--color-primary-dark); color: #fff; border: 2px solid var(--color-primary-light); }
+    .badge-wakaf   { background: #fff; color: var(--color-primary-dark); border: 2px solid var(--color-primary-medium); }
+    .badge-fwp     { background: #fff; color: var(--color-primary); border: 2px solid var(--color-primary); }
+    .badge-lokadesa{ background: var(--color-primary-dark); color: #fff; border: 2px solid var(--color-primary-light); }
+    .badge-cendo   { background: var(--color-primary); color: #fff; border: 2px solid var(--color-primary-light); }
+
+    /* Badge with logo image */
+    .badge-logo { display: inline-flex; align-items: center; gap: 0.45rem; }
+    .badge-logo-img {
+      width: 22px; height: 22px;
+      object-fit: contain; border-radius: 50%; flex-shrink: 0;
+    }
+
+    /* ------ Responsive ------ */
+    @media (max-width: 1199px) {
+      .values-grid        { grid-template-columns: repeat(4, 1fr); }
+      .leadership-grid    { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 991px) {
+      .hulu-hilir-grid  { grid-template-columns: 1fr; gap: 1.5rem; }
+      .why-nautera-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .roda-grid        { grid-template-columns: 1fr; gap: 1.5rem; }
+      .why-card         { padding: 2.25rem 1.75rem; }
+      .cert-strip       { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .cert-strip-divider { width: 100%; height: 1px; }
+    }
+
+    @media (max-width: 767px) {
+      .trust-marquee-track { gap: 2rem; -webkit-animation-duration: 18s; animation-duration: 18s; }
+      .trust-circle-slot   { width: 85px; height: 85px; }
+      .values-grid         { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+      .leadership-grid     { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .why-card            { padding: 2rem 1.5rem; }
+      .why-icon-wrap       { width: 48px; height: 48px; font-size: 1.4rem; }
+      .hulu-hilir-content  { padding: 1.5rem 1.5rem 2rem; }
+      .cert-strip          { padding: 1.5rem; }
+      .cert-strip-badges   { gap: 0.5rem; }
+      .cert-badge-item     { font-size: 0.75rem; padding: 0.4rem 0.9rem 0.4rem 0.5rem; }
+      .value-card          { padding: 1.5rem 0.75rem; min-height: auto; }
+      .value-letter        { width: 54px; height: 54px; font-size: 2rem; border-radius: 14px; }
+      .leader-avatar-wrapper { width: 80px; height: 80px; }
+    }
+
+    @media (max-width: 480px) {
+      .values-grid      { grid-template-columns: 1fr; gap: 0.65rem; }
+      .leadership-grid  { grid-template-columns: 1fr; gap: 0.85rem; }
+      .why-card         { padding: 1.75rem 1.25rem; border-radius: 16px; }
+      .hulu-hilir-content { padding: 1.25rem 1.25rem 1.75rem; }
+      .cert-strip       { padding: 1.25rem; border-radius: 16px; }
+      .cert-badge-item  { font-size: 0.72rem; }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Overlay for drawer menu -->
+  <div class="overlay"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo"><span class="logo-mark"><i class="fa-solid fa-seedling"></i></span><span class="logo-text">NAUTERA</span></a>
+      <ul class="nav-menu">
+        <li><a href="our-harvest.html" class="nav-link">Our Harvest</a></li>
+        <li><a href="for-growers.html" class="nav-link">For Growers</a></li>
+        <li><a href="about.html" class="nav-link active">About Us</a></li>
+        <li><a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="our-harvest.html" class="mobile-nav-link">Our Harvest</a>
+    <a href="for-growers.html" class="mobile-nav-link">For Growers</a>
+    <a href="about.html" class="mobile-nav-link active">About Us</a>
+    <a href="blog.html" class="mobile-nav-link">Blog</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</a>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="hero-bg-media">
+        <img src="assets/images/bg-4.png" alt=""
+          onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='assets/images/hero-about-bg.png';}else{this.style.display='none';}">
+      </div>
+      <div class="hero-overlay-grid"></div>
+      <div class="container">
+        <div class="grid-2">
+          <div class="hero-content reveal">
+            <h1>Behind Every Quality<br>You Trust.</h1>
+            <p>
+              Dibalik setiap kualitas terbaik 
+              dari udang yang anda percayai
+            </p>
+            <div class="hero-float-card">
+              <span class="hero-float-dot"></span>
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary-dark);">Transparan &bull; Bersertifikat &bull; Berpengalaman</span>
+            </div>
+          </div>
+          <div class="reveal delay-200"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Hulu Hilir --------------------------------------------------------------------- -->
+    <section id="hulu-hilir" style="background: var(--color-bg-white); border-top: 1px solid rgba(119,171,89,0.07); border-bottom: 1px solid rgba(119,171,89,0.07);">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">Rantai Pasok Terintegrasi</span>
+          <h2>From Farm to Plate,<br>Without Compromise.</h2>
+          <p>Kami mengawasi setiap tahap perjalanan udang &mdash; dari kolam budidaya di pesisir hingga tiba dalam kondisi prima di tangan Anda.</p>
+        </div>
+
+        <div class="hulu-hilir-grid">
+          <!-- Hulu -->
+          <div class="hulu-hilir-card reveal">
+            <div class="img-slot img-slot-flush" style="min-height: 260px;">
+              <img src="assets/images/hilit.png" alt="Nautera Farm Cipatujah" loading="lazy">
+              <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">farm-cipatujah.webp</span></div>
+            </div>
+            <div class="hulu-hilir-content">
+              <span class="hulu-hilir-tag">Hulu &bull; Budi Daya</span>
+              <h3>Nautera Farm, Cipatujah</h3>
+              <p>Bermula dari tambak di Cipatujah, Tasikmalaya, kami menerapkan sistem budi daya yang terstandar dan bertanggung jawab. Melalui Nautera Academy, setiap SDM dibekali dengan kapabilitas teknis yang terukur dan etika muamalah yang lurus.</p>
+            </div>
+          </div>
+
+          <!-- Hilir -->
+          <div class="hulu-hilir-card reveal delay-200">
+            <div class="img-slot img-slot-flush" style="min-height: 260px;">
+              <img src="assets/images/panen.png" alt="Shrimply Distribution Hub Bandung" loading="lazy">
+              <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span></div>
+            </div>
+            <div class="hulu-hilir-content">
+              <span class="hulu-hilir-tag">Hilir &bull; Pengolahan &amp; Distribusi</span>
+              <h3>Shrimply Distribution Hub, Bandung Raya</h3>
+              <p>Dari titik panen, produk memasuki fasilitas pengolahan higienis dan sistem distribusi rantai pasok Shrimply Distribution Hub. Kami mendistribusikan udang mentah berkualitas tinggi untuk pasar B2B dan ritel &mdash; tanpa glazing, tanpa manipulasi berat.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certification Strip -->
+        <div class="cert-strip reveal">
+          <span class="cert-strip-label">Sertifikasi Mutu</span>
+          <div class="cert-strip-divider"></div>
+          <div class="cert-strip-badges">
+            <span class="cert-badge-item">
+              <img src="assets/images/halal.jpg" alt="Halal Indonesia" onerror="this.style.display='none'">
+              Halal Indonesia
+            </span>
+            <span class="cert-badge-item">
+              <img src="assets/images/haccp.avif" alt="HACCP Certified" onerror="this.style.display='none'">
+              HACCP Certified
+            </span>
+            <span class="cert-badge-item">
+              <span class="cert-badge-check"><i class="fa-solid fa-check"></i></span>
+              SKP &mdash; Surat Kelayakan Pengolahan
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Why Nautera --------------------------------------------------------------------- -->
+    <section>
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">Keunggulan Kami</span>
+          <h2>Why Choose Nautera?</h2>
+          <p>Kepastian mutu, timbangan jujur tanpa glazing, dan transparansi transaksi yang menjadi fondasi setiap kemitraan kami.</p>
+        </div>
+
+        <div class="why-nautera-grid">
+          <!-- Card 1 -->
+          <div class="why-card reveal">
+            <div class="why-icon-wrap fa-icon-box" style="width: 52px; height: 52px; font-size: 1.35rem; margin-bottom: 1.25rem;">
+              <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <h3>Timbangan Amanah</h3>
+            <p>Tidak ada glazing tersembunyi. Berat yang tertera adalah berat udang sesungguhnya &mdash; bukan berat es yang membungkusnya.</p>
+            <span class="why-card-note"><i class="fa-solid fa-circle-check"></i> Bayar sesuai nilai aslinya.</span>
+          </div>
+          <!-- Card 2 -->
+          <div class="why-card reveal delay-100">
+            <div class="why-icon-wrap fa-icon-box" style="width: 52px; height: 52px; font-size: 1.35rem; margin-bottom: 1.25rem;">
+              <i class="fa-solid fa-sliders"></i>
+            </div>
+            <h3>Grading Presisi</h3>
+            <p>Setiap koli terdiri dari satu ukuran yang seragam. Tidak ada campur aduk size, sehingga kalkulasi porsi dan harga menjadi akurat dan mudah.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="why-card reveal delay-200">
+            <div class="why-icon-wrap fa-icon-box" style="width: 52px; height: 52px; font-size: 1.35rem; margin-bottom: 1.25rem;">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3>Rantai Pasok Shrimply</h3>
+            <p>Dari kolam hingga pintu gudang Anda, suhu pasokan dipertahankan konsisten. Tekstur kenyal dan rasa manis alami udang terjaga sempurna.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Values N-A-U-T-E-R-A --------------------------------------- -->
+    <section id="values" style="background: var(--color-bg-white); border-top: 1px solid rgba(119,171,89,0.07); border-bottom: 1px solid rgba(119,171,89,0.07);">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">Kompas Perusahaan</span>
+          <h2>Values That Guide Our Journey.</h2>
+          <p>Di tengah dinamika industri pangan, tujuh nilai ini menjadi pedoman etika dalam setiap keputusan, operasional, dan kemitraan kami.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card reveal">
+            <div class="value-letter">N</div>
+            <h3>Nurturing</h3>
+            <span class="value-sub">Mengayomi</span>
+            <p>Mengembangkan potensi SDM dan mendampingi petambak secara berkelanjutan demi pertumbuhan bersama.</p>
+          </div>
+          <div class="value-card reveal delay-100">
+            <div class="value-letter">A</div>
+            <h3>Authentic</h3>
+            <span class="value-sub">Jujur</span>
+            <p>Menjaga transparansi, keaslian mutu produk, dan integritas tinggi dalam setiap kemitraan.</p>
+          </div>
+          <div class="value-card reveal delay-200">
+            <div class="value-letter">U</div>
+            <h3>United</h3>
+            <span class="value-sub">Satu Sinergi</span>
+            <p>Mengedepankan kolaborasi lintas tim dan mitra untuk mencapai tujuan bersama yang lebih besar.</p>
+          </div>
+          <div class="value-card reveal delay-300">
+            <div class="value-letter">T</div>
+            <h3>Trustworthy</h3>
+            <span class="value-sub">Tepercaya</span>
+            <p>Konsisten memberikan hasil terbaik dan dapat diandalkan dari tambak hingga ke tangan konsumen.</p>
+          </div>
+          <div class="value-card reveal delay-400">
+            <div class="value-letter">E</div>
+            <h3>Excellent</h3>
+            <span class="value-sub">Unggul</span>
+            <p>Menerapkan standar kerja dan SOP tinggi dalam setiap operasional budidaya dan pengolahan.</p>
+          </div>
+          <div class="value-card reveal delay-500">
+            <div class="value-letter">R</div>
+            <h3>Resilient</h3>
+            <span class="value-sub">Tangguh</span>
+            <p>Siap beradaptasi, belajar dari tantangan, dan terus bangkit untuk menjaga keberlanjutan bisnis.</p>
+          </div>
+          <div class="value-card reveal delay-600">
+            <div class="value-letter">A</div>
+            <h3>Accountable</h3>
+            <span class="value-sub">Bertanggung Jawab</span>
+            <p>Bertanggung jawab penuh atas kualitas produk, keamanan pasokan, dan dampak positif bagi lingkungan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Leadership --------------------------------------------------------------------- -->
+    <section>
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">Tim Manajemen</span>
+          <h2>The People Behind Nautera.</h2>
+          <p>Dipimpin oleh tim multidisiplin yang memadukan pengalaman industri, keahlian teknis akuakultur, dan komitmen integritas usaha.</p>
+        </div>
+
+        <div class="leadership-grid">
+          <div class="leader-card reveal">
+            <div class="leader-avatar-wrapper">
+              <div class="img-slot img-slot-circle">
+                <img src="assets/images/team-aulia.webp" alt="Aulia Sidiq" loading="lazy">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-user"></i></span><span class="slot-name">team-aulia.webp</span></div>
+              </div>
+            </div>
+            <h3>Aulia Sidiq</h3>
+            <span class="leader-role">Founder</span>
+          </div>
+          <div class="leader-card reveal delay-100">
+            <div class="leader-avatar-wrapper">
+              <div class="img-slot img-slot-circle">
+                <img src="assets/images/team-khalil.webp" alt="M Khalil Bisyiri" loading="lazy">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-user"></i></span><span class="slot-name">team-khalil.webp</span></div>
+              </div>
+            </div>
+            <h3>M Khalil Bisyiri</h3>
+            <span class="leader-role">Co-Founder & COO</span>
+          </div>
+          <div class="leader-card reveal delay-200">
+            <div class="leader-avatar-wrapper">
+              <div class="img-slot img-slot-circle">
+                <img src="assets/images/team-yudi.webp" alt="Yudi Darmawan" loading="lazy">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-user"></i></span><span class="slot-name">team-yudi.webp</span></div>
+              </div>
+            </div>
+            <h3>Yudi Darmawan</h3>
+            <span class="leader-role">Head of Farm Ops</span>
+          </div>
+          <div class="leader-card reveal delay-300">
+            <div class="leader-avatar-wrapper">
+              <div class="img-slot img-slot-circle">
+                <img src="assets/images/team-faris.webp" alt="M Faris Muslimin" loading="lazy">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-user"></i></span><span class="slot-name">team-faris.webp</span></div>
+              </div>
+            </div>
+            <h3>M Faris Muslimin</h3>
+            <span class="leader-role">Head of Processing</span>
+          </div>
+          <div class="leader-card reveal delay-400">
+            <div class="leader-avatar-wrapper">
+              <div class="img-slot img-slot-circle">
+                <img src="assets/images/team-rohlan.webp" alt="Rohlan" loading="lazy">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-user"></i></span><span class="slot-name">team-rohlan.webp</span></div>
+              </div>
+            </div>
+            <h3>Rohlan</h3>
+            <span class="leader-role">Head of Academy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Roda Ekosistem --------------------------------------------------------- -->
+    <section style="background: var(--color-bg-white); border-top: 1px solid rgba(119,171,89,0.07); border-bottom: 1px solid rgba(119,171,89,0.07);">
+      <div class="container">
+        <div class="section-header center reveal">
+          <span class="section-label">Struktur Organisasi</span>
+          <h2>Nautera Ecosystem Pillars.</h2>
+          <p>Dua pilar operasional terpadu yang bersinergi untuk menjaga kesinambungan mutu dari kolam budidaya hingga ke tangan konsumen.</p>
+        </div>
+
+        <div class="roda-grid">
+          <div class="card roda-card reveal">
+            <div class="img-slot" style="min-height: 220px;">
+              <img src="assets/images/aca.png" alt="CEO Office & Pengembangan SDM" loading="lazy">
+              <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">roda-ceo-office.webp</span></div>
+            </div>
+            <div class="roda-card-content">
+              <h3>CEO Office & Pengembangan SDM</h3>
+              <p>Menyelaraskan koordinasi lintas tim, membangun kemitraan strategis, dan mengembangkan talenta agar inisiatif prioritas perusahaan berjalan dengan arah yang jelas.</p>
+            </div>
+          </div>
+          <div class="card roda-card reveal delay-200">
+            <div class="img-slot" style="min-height: 220px;">
+              <img src="assets/images/roda.png" alt="Business Operations" loading="lazy">
+              <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">roda-operations.webp</span></div>
+            </div>
+            <div class="roda-card-content">
+              <h3>Business Operations</h3>
+              <p>Mengelola proses budidaya, pengolahan pasca panen, dan distribusi secara terpadu &mdash; menjamin efisiensi operasional sekaligus standar mutu yang konsisten di setiap tahap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Partners Marquee --------------------------------------------------- -->
+    <section style="background: var(--color-bg-white); border-bottom: 1px solid rgba(119,171,89,0.08); padding: 4.5rem 0 3.5rem;">
+      <div class="container">
+        <div class="section-header center reveal" style="margin-bottom: 2rem;">
+          <span class="section-label">Ekosistem Kemitraan</span>
+          <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; margin-bottom: 0.5rem;">
+            Building Trust with<br>
+            <span style="color: var(--color-primary-dark);">Strategic Partners</span>
+          </h2>
+          <p>Jaringan mitra strategis yang memperkuat ekosistem Nautera dari hulu ke hilir demi kemajuan pangan nusantara.</p>
+        </div>
+      </div>
+
+      <div class="trust-marquee-wrapper reveal">
+        <div class="trust-marquee-track">
+          <!-- Set 1 -->
+          <div class="trust-logo-item" title="Amal Produktif Indonesia">
+            <div class="trust-circle-slot">
+              <img src="assets/images/amal.jpg" alt="Amal Produktif Indonesia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-amal"><span><i class="fa-solid fa-hand-holding-heart"></i></span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Golden Future">
+            <div class="trust-circle-slot">
+              <img src="assets/images/gf.jpg" alt="Golden Future" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-golden"><span>GF</span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Indonesia Peduli">
+            <div class="trust-circle-slot">
+              <img src="assets/images/peduli.jpg" alt="Indonesia Peduli" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-peduli"><span>IP</span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Rumah Wakaf">
+            <div class="trust-circle-slot">
+              <img src="assets/images/rumah.jpg" alt="Rumah Wakaf" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-wakaf"><span><i class="fa-solid fa-mosque"></i></span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Forum Wakaf Produktif">
+            <div class="trust-circle-slot">
+              <img src="assets/images/forum.png" alt="Forum Wakaf Produktif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-fwp"><span>FWP</span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Lokadesa">
+            <div class="trust-circle-slot">
+              <img src="assets/images/loka.png" alt="Lokadesa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-lokadesa"><span><i class="fa-solid fa-tree"></i></span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="CENDO">
+            <div class="trust-circle-slot">
+              <img src="assets/images/cendo.jpg" alt="CENDO" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-cendo"><span><i class="fa-solid fa-building"></i></span></div>
+            </div>
+          </div>
+          <!-- Set 2 --- seamless loop -->
+          <div class="trust-logo-item" title="Amal Produktif Indonesia">
+            <div class="trust-circle-slot">
+              <img src="assets/images/amal.jpg" alt="Amal Produktif Indonesia" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-amal"><span><i class="fa-solid fa-hand-holding-heart"></i></span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Golden Future">
+            <div class="trust-circle-slot">
+              <img src="assets/images/gf.jpg" alt="Golden Future" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-golden"><span>GF</span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Indonesia Peduli">
+            <div class="trust-circle-slot">
+              <img src="assets/images/peduli.jpg" alt="Indonesia Peduli" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-peduli"><span>IP</span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Rumah Wakaf">
+            <div class="trust-circle-slot">
+              <img src="assets/images/rumah.jpg" alt="Rumah Wakaf" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-wakaf"><span><i class="fa-solid fa-mosque"></i></span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Forum Wakaf Produktif">
+            <div class="trust-circle-slot">
+              <img src="assets/images/forum.png" alt="Forum Wakaf Produktif" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-fwp"><span>FWP</span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="Lokadesa">
+            <div class="trust-circle-slot">
+              <img src="assets/images/loka.png" alt="Lokadesa" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-lokadesa"><span><i class="fa-solid fa-tree"></i></span></div>
+            </div>
+          </div>
+          <div class="trust-logo-item" title="CENDO">
+            <div class="trust-circle-slot">
+              <img src="assets/images/cendo.jpg" alt="CENDO" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+              <div class="trust-circle-badge badge-cendo"><span><i class="fa-solid fa-building"></i></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------ Career CTA --------------------------------------------------------------------- -->
+    <section id="career" class="career-section">
+      <div class="container">
+        <div class="section-header center reveal" style="margin-bottom: 2rem;">
+          <span class="section-label" style="color: var(--color-primary);">Tumbuh Bersama Kami</span>
+          <h2>Grow and Build the Aquaculture Future with Us.</h2>
+          <p>Kami mencari individu berintegritas dan berdedikasi tinggi untuk bersama-sama mentransformasi masa depan industri budidaya udang nasional.</p>
+        </div>
+        <div class="flex-center reveal" style="display: flex; justify-content: center; align-items: center; width: 100%; text-align: center; margin: 0 auto;">
+          <a href="contact.html?type=career" class="btn btn-primary" style="padding: 1rem 3rem;">
+            Lihat Kesempatan Karir <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section (Balanced 4-Column Grid) -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-top">
+      <!-- Col 1: Brand -->
+      <div class="footer-brand">
+        <div class="brand-logo">NAUTERA</div>
+        <span class="brand-sub">INDONESIA</span>
+        <p>Ekosistem tata kelola budidaya dan rantai pasok udang vaname terintegrasi. Mengawal komitmen jujur di hulu hingga kepastian mutu di hilir bersama Shrimply.</p>
+        <div class="badge badge-pulse" style="margin-top: 0.5rem; background: rgba(201, 223, 138, 0.18); border: 1px solid rgba(201, 223, 138, 0.35); color: var(--color-primary-light); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 30px; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-primary-light);"></i> Vaname Segar &amp; Amanah
+        </div>
+      </div>
+
+      <!-- Col 2: NAVIGASI -->
+      <div>
+        <h4>NAVIGASI</h4>
+        <ul class="footer-links">
+          <li><a href="our-harvest.html">Our Harvest (Produk)</a></li>
+          <li><a href="for-growers.html">For Growers (Kemitraan)</a></li>
+          <li><a href="about.html">About Us (Tentang Kami)</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="contact.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: EKOSISTEM -->
+      <div>
+        <h4>EKOSISTEM</h4>
+        <ul class="footer-links">
+          <li><a href="for-growers.html#kemitraan">KSO Tambak Presisi</a></li>
+          <li><a href="for-growers.html#academy">Nautera Academy</a></li>
+          <li><a href="for-growers.html#supply">Suplai Pakan &amp; Saprotam</a></li>
+          <li><a href="our-harvest.html">Shrimply B2B &amp; Ritel</a></li>
+          <li><a href="about.html#career">Karir &amp; Talenta</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: KONTAK & HUB -->
+      <div class="footer-contact-block">
+        <h4>KONTAK &amp; HUB</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <strong>Email Resmi</strong>
+            <a href="mailto:sales@nautera.id">sales@nautera.id</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <strong>WhatsApp Sales</strong>
+            <a href="tel:+6281234567890">+62 812-3456-7890</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-building-user"></i>
+          </div>
+          <div>
+            <strong>Kantor Manajemen</strong>
+            <span>Productive Building Lt. 2, Bandung 40273.</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div>
+            <strong>Mitra Logistik &amp; Cold Chain (Hilir)</strong>
+            <span>Bandung Raya &amp; Cipatujah Tasikmalaya.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span class="footer-tagline">NAUTERA &mdash; Mengawal Kualitas, Menjaga Muamalah.</span>
+      <div class="footer-socials">
+        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+      <span>&copy; 2026 Nautera Indonesia. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  extraScript?: string;
+}
+
+const {
+  title = 'NAUTERA | Ekosistem Tata Kelola & Rantai Pasok Udang Vaname',
+  description = 'NAUTERA mengintegrasikan budidaya berkelanjutan hulu (KSO SOP Presisi), pengembangan SDM Nautera Academy, hingga hilirisasi pasokan Shrimply bermutu tinggi.',
+  extraScript
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="theme-color" content="#234C20">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <slot name="head" />
+</head>
+<body>
+  <Navbar />
+
+  <slot />
+
+  <Footer />
+
+  <!-- Global Client Scripts -->
+  <script is:inline src="/scripts/main.js"></script>
+  {extraScript && <script is:inline src={extraScript}></script>}
+  <slot name="scripts" />
+</body>
+</html>

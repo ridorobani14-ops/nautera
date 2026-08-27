@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAUTERA &mdash; Contact Us</title>
+  <meta name="description" content="Hubungi Nautera Indonesia. Dapatkan penawaran harga khusus grosir B2B untuk restoran dan katering, konsultasi produk, atau gabung kemitraan tambak.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="NAUTERA &mdash; Quality Shrimps & Sustainable Aquaculture">
+  <meta property="og:description" content="Hubungi sales kami untuk kebutuhan keluarga maupun pasokan bisnis B2B Anda.">
+  <meta property="og:type" content="website">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Contact Page Layout */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 4rem;
+      align-items: flex-start;
+      margin-top: 2rem;
+    }
+    
+    .contact-page-section {
+      position: relative;
+      background-color: var(--color-bg-canvas);
+    }
+    
+    .contact-left {
+      padding-right: 1.5rem;
+    }
+    
+    .contact-left h1 {
+      color: var(--color-primary-dark) !important;
+      font-size: clamp(2.2rem, 4vw, 3rem) !important;
+      font-weight: 800 !important;
+      line-height: 1.2 !important;
+      margin-bottom: 1.5rem !important;
+      -webkit-text-stroke: 0px !important;
+      text-shadow: none !important;
+    }
+    
+    .contact-left p {
+      color: var(--color-text-light) !important;
+      font-size: 1.05rem !important;
+      line-height: 1.6 !important;
+      margin-bottom: 1.5rem !important;
+      -webkit-text-stroke: 0px !important;
+      text-shadow: none !important;
+    }
+    
+    .contact-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border: 3px solid rgba(119, 171, 89, 0.3);
+      box-shadow: 0 10px 28px rgba(35, 76, 32, 0.12);
+    }
+    
+    .contact-avatar .image-placeholder {
+      min-height: 100%;
+      border-radius: 0;
+      border: none;
+      font-size: 0;
+      padding: 0;
+    }
+    
+    .contact-points {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    
+    .contact-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-text-dark);
+      line-height: 1.5;
+    }
+    
+    .contact-point-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+      color: var(--color-bg-white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      box-shadow: 0 2px 8px rgba(35, 76, 32, 0.2);
+    }
+    
+    .contact-details-box {
+      border-top: 1px solid rgba(119, 171, 89, 0.15);
+      padding-top: 2rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    
+    .contact-detail-line {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--color-text-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: var(--transition-fast);
+    }
+    
+    .contact-detail-line:hover {
+      color: var(--color-primary);
+      transform: translateX(4px);
+    }
+    
+    .contact-detail-icon {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      width: 24px;
+      text-align: center;
+    }
+
+    /* Form Card Styling */
+    .form-card {
+      background-color: var(--color-bg-white);
+      border-radius: 24px;
+      padding: 3.5rem;
+      box-shadow: 0 20px 50px rgba(30, 70, 20, 0.08);
+      border: 1px solid rgba(119, 171, 89, 0.12);
+    }
+    
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-row-2 .form-group {
+      margin-bottom: 0;
+    }
+    
+    .form-label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+    }
+    
+    .form-input, .form-select, .form-textarea {
+      font-family: var(--font-family);
+      font-size: 0.95rem;
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      border: 1px solid rgba(119, 171, 89, 0.2);
+      background-color: var(--color-bg-canvas);
+      color: var(--color-text-dark);
+      transition: var(--transition-fast);
+      outline: none;
+      width: 100%;
+    }
+    
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: #9AA597;
+    }
+    
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      background-color: var(--color-bg-white);
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(54, 127, 45, 0.15);
+    }
+    
+    .form-textarea {
+      resize: vertical;
+      min-height: 160px;
+    }
+    
+    /* Error styles */
+    .form-group.has-error .form-input,
+    .form-group.has-error .form-select,
+    .form-group.has-error .form-textarea {
+      border-color: var(--color-error);
+      background-color: #FFF8F8;
+    }
+    
+    .form-group.has-error .form-input:focus {
+      box-shadow: 0 0 0 4px rgba(217, 56, 56, 0.15);
+    }
+    
+    .form-error-msg {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-error);
+      margin-top: 0.25rem;
+      display: none;
+    }
+    
+    .form-group.has-error .form-error-msg {
+      display: block;
+    }
+    
+    /* Consent checkbox */
+    .consent-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin: 2rem 0;
+      padding: 1.25rem;
+      background-color: var(--color-bg-canvas);
+      border-radius: 12px;
+      border: 1px solid rgba(119, 171, 89, 0.1);
+      cursor: pointer;
+    }
+    
+    .consent-checkbox {
+      margin-top: 0.25rem;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--color-primary);
+      cursor: pointer;
+    }
+    
+    .consent-label {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      line-height: 1.4;
+      cursor: pointer;
+      user-select: none;
+    }
+    
+    /* Loading & success overlays inside form card */
+    .form-card-wrapper {
+      position: relative;
+    }
+    
+    .form-state-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+      border-radius: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+    
+    .form-state-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--color-primary-very-light);
+      border-top-color: var(--color-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin-bottom: 1.5rem;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .success-icon {
+      font-size: 4rem;
+      color: var(--color-success);
+      margin-bottom: 1.5rem;
+      background-color: var(--color-primary-very-light);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(54, 127, 45, 0.1);
+    }
+
+    /* Submit Button styling */
+    .btn-submit {
+      width: 100%;
+      background-color: var(--color-primary-dark);
+      color: var(--color-bg-white);
+      border: none;
+      padding: 1.15rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      border-radius: 12px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(35, 76, 32, 0.15);
+      transition: var(--transition-smooth);
+    }
+    
+    .btn-submit:hover {
+      background-color: var(--color-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(54, 127, 45, 0.25);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .contact-left {
+        padding-right: 0;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .form-row-2 .form-group {
+        margin-bottom: 1.5rem;
+      }
+      .form-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Overlay for drawer menu -->
+  <div class="overlay"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo"><span class="logo-mark"><i class="fa-solid fa-seedling"></i></span><span class="logo-text">NAUTERA</span></a>
+      <ul class="nav-menu">
+        <li><a href="our-harvest.html" class="nav-link">Our Harvest</a></li>
+        <li><a href="for-growers.html" class="nav-link">For Growers</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="our-harvest.html" class="mobile-nav-link">Our Harvest</a>
+    <a href="for-growers.html" class="mobile-nav-link">For Growers</a>
+    <a href="about.html" class="mobile-nav-link">About Us</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</a>
+  </nav>
+
+  <main style="padding-top: 5rem;">
+    <section class="contact-page-section" style="min-height: auto; padding-top: 4rem; padding-bottom: 5rem; background-color: var(--color-bg-canvas);">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left side details -->
+          <div class="contact-left reveal">
+            <div class="contact-avatar">
+              <div class="img-slot img-slot-circle">
+                <img src="assets/images/team-rep.webp" alt="Customer Service Representative Nautera" loading="lazy">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span></div>
+              </div>
+            </div>
+            
+            <h1>Connect with Nautera<br>for Your Shrimp<br>Solutions.</h1>
+            <p>Dari kebutuhan pasokan keluarga hingga skala operasional dapur bisnis dan kemitraan tambak, tim kami siap mendengarkan dan memberikan solusi yang tepat.</p>
+            
+            <ul class="contact-points">
+              <li class="contact-point-item">
+                <span class="contact-point-icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Permintaan penawaran harga khusus (Grosir/B2B) untuk restoran dan katering.</span>
+              </li>
+              <li class="contact-point-item">
+                <span class="contact-point-icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Konsultasi spesifikasi produk (Size &amp; SKU) untuk efisiensi dapur Anda.</span>
+              </li>
+              <li class="contact-point-item">
+                <span class="contact-point-icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Pertanyaan produk ritel siap olah untuk konsumsi keluarga.</span>
+              </li>
+              <li class="contact-point-item">
+                <span class="contact-point-icon">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span>Peluang kemitraan budi daya dan program Nautera Academy.</span>
+              </li>
+            </ul>
+            
+            <div class="contact-details-box">
+              <a href="mailto:sales@nautera.id" class="contact-detail-line">
+                <span class="contact-detail-icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <span>sales@nautera.id</span>
+              </a>
+              <a href="tel:+6281234567890" class="contact-detail-line">
+                <span class="contact-detail-icon">
+                  <i class="fa-solid fa-phone"></i>
+                </span>
+                <span>+62 812-3456-7890</span>
+              </a>
+              <div class="contact-detail-line" style="cursor: default;">
+                <span class="contact-detail-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+                </span>
+                <span>Productive Building Lt. 2, Bandung 40273</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side form -->
+          <div class="form-card-wrapper reveal delay-200">
+            <div class="form-card">
+              <!-- Form states overlays -->
+              <div class="form-state-overlay" id="form-loading-overlay">
+                <div class="spinner"></div>
+                <h3>Mengirim Pesan...</h3>
+                <p>Silakan tunggu beberapa saat, data sedang diproses.</p>
+              </div>
+
+              <div class="form-state-overlay" id="form-success-overlay">
+                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <h3 style="color: var(--color-success); font-size: 1.5rem; margin-bottom: 0.5rem;">Pesan Terkirim!</h3>
+                <p style="margin-bottom: 1.5rem;">Terima kasih telah menghubungi Nautera. Tim sales kami akan segera menghubungi Anda kembali melalui WhatsApp atau Email.</p>
+                <button class="btn btn-primary" id="btn-success-reset">Kirim Pesan Baru</button>
+              </div>
+
+              <!-- Main Form -->
+              <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/" novalidate>
+                <input type="hidden" name="form-name" value="contact">
+                <input type="hidden" name="subject" value="Pesan Contact dari Website Ridok">
+                <p class="hidden-netlify-field" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+                  <label>Jangan isi: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                </p>
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label class="form-label" for="first-name">Nama Depan *</label>
+                    <input class="form-input" type="text" id="first-name" name="first-name" placeholder="Jhon" required>
+                    <span class="form-error-msg">Nama Depan wajib diisi</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="last-name">Nama Belakang *</label>
+                    <input class="form-input" type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                    <span class="form-error-msg">Nama Belakang wajib diisi</span>
+                  </div>
+                </div>
+
+                <div class="form-row-2" style="margin-top: 1.5rem;">
+                  <div class="form-group">
+                    <label class="form-label" for="business-name">Nama Bisnis/Perusahaan</label>
+                    <input class="form-input" type="text" id="business-name" name="business-name" placeholder="(opsional)">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="email">Email *</label>
+                    <input class="form-input" type="email" id="email" name="email" placeholder="nama@email.com" required>
+                    <span class="form-error-msg">Masukkan email yang valid</span>
+                  </div>
+                </div>
+
+                <div class="form-row-2" style="margin-top: 1.5rem;">
+                  <div class="form-group">
+                    <label class="form-label" for="whatsapp">Nomor WhatsApp *</label>
+                    <input class="form-input" type="tel" id="whatsapp" name="whatsapp" placeholder="0812..." required>
+                    <span class="form-error-msg">Masukkan nomor WhatsApp yang valid (minimal 10 digit, contoh: 0812...)</span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="requirement-type">Tipe Kebutuhan *</label>
+                    <select class="form-select" id="requirement-type" name="requirement-type" required>
+                      <option value="" disabled selected>Pilih Tipe ...</option>
+                      <option value="b2b-offer">Permintaan penawaran harga khusus (Grosir/B2B) untuk restoran dan katering.</option>
+                      <option value="spec-consult">Konsultasi spesifikasi produk (Size &amp; SKU) untuk efisiensi dapur Anda.</option>
+                      <option value="retail-inquiry">Pertanyaan produk ritel siap olah untuk konsumsi keluarga.</option>
+                      <option value="academy-partner">Peluang kemitraan budi daya dan program Nautera Academy.</option>
+                    </select>
+                    <span class="form-error-msg">Silakan pilih salah satu tipe kebutuhan</span>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-top: 1.5rem;">
+                  <label class="form-label" for="message">Pesan *</label>
+                  <textarea class="form-textarea" id="message" name="message" placeholder="Tuliskan Pesan Anda Secara Rinci..." required></textarea>
+                  <span class="form-error-msg">Pesan wajib diisi</span>
+                </div>
+
+                <div class="consent-group" id="consent-wrapper">
+                  <input class="consent-checkbox" type="checkbox" id="consent-check" name="consent" value="setuju" required>
+                  <label class="consent-label" for="consent-check">
+                    Saya setuju bahwa data ini digunakan oleh Nautera untuk menghubungi saya terkait permintaan layanan.
+                  </label>
+                </div>
+                <div class="form-group" style="margin-top:-1.5rem; margin-bottom: 2rem;">
+                  <span class="form-error-msg" id="consent-error-msg" style="padding-left:1.25rem;">Anda harus menyetujui syarat layanan kami</span>
+                </div>
+
+                <button class="btn-submit" type="submit">Kirim Pesan</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section (Balanced 4-Column Grid) -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-top">
+      <!-- Col 1: Brand -->
+      <div class="footer-brand">
+        <div class="brand-logo">NAUTERA</div>
+        <span class="brand-sub">INDONESIA</span>
+        <p>Ekosistem tata kelola budidaya dan rantai pasok udang vaname terintegrasi. Mengawal komitmen jujur di hulu hingga kepastian mutu di hilir bersama Shrimply.</p>
+        <div class="badge badge-pulse" style="margin-top: 0.5rem; background: rgba(201, 223, 138, 0.18); border: 1px solid rgba(201, 223, 138, 0.35); color: var(--color-primary-light); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 30px; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-primary-light);"></i> Vaname Segar &amp; Amanah
+        </div>
+      </div>
+
+      <!-- Col 2: NAVIGASI -->
+      <div>
+        <h4>NAVIGASI</h4>
+        <ul class="footer-links">
+          <li><a href="our-harvest.html">Our Harvest (Produk)</a></li>
+          <li><a href="for-growers.html">For Growers (Kemitraan)</a></li>
+          <li><a href="about.html">About Us (Tentang Kami)</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="contact.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: EKOSISTEM -->
+      <div>
+        <h4>EKOSISTEM</h4>
+        <ul class="footer-links">
+          <li><a href="for-growers.html#kemitraan">KSO Tambak Presisi</a></li>
+          <li><a href="for-growers.html#academy">Nautera Academy</a></li>
+          <li><a href="for-growers.html#supply">Suplai Pakan &amp; Saprotam</a></li>
+          <li><a href="our-harvest.html">Shrimply B2B &amp; Ritel</a></li>
+          <li><a href="about.html#career">Karir &amp; Talenta</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: KONTAK & HUB -->
+      <div class="footer-contact-block">
+        <h4>KONTAK &amp; HUB</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <strong>Email Resmi</strong>
+            <a href="mailto:sales@nautera.id">sales@nautera.id</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <strong>WhatsApp Sales</strong>
+            <a href="tel:+6281234567890">+62 812-3456-7890</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-building-user"></i>
+          </div>
+          <div>
+            <strong>Kantor Manajemen</strong>
+            <span>Productive Building Lt. 2, Bandung 40273.</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div>
+            <strong>Mitra Logistik &amp; Cold Chain (Hilir)</strong>
+            <span>Bandung Raya &amp; Cipatujah Tasikmalaya.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span class="footer-tagline">NAUTERA &mdash; Mengawal Kualitas, Menjaga Muamalah.</span>
+      <div class="footer-socials">
+        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+      <span>&copy; 2026 Nautera Indonesia. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="contact.js"></script>
+</body>
+</html>

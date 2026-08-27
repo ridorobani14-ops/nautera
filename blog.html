@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Insights &mdash; NAUTERA Indonesia</title>
+  <meta name="description" content="Kumpulan artikel, edukasi praktis, dan riset lapangan seputar budidaya udang vaname berkelanjutan, rantai dingin, dan biosekuriti dari Nautera.">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-hero {
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, #2a5a27 0%, var(--color-primary-dark) 70%, #153013 100%);
+      color: #FFFFFF;
+      padding: 9rem 0 5rem;
+      text-align: center;
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 1px solid rgba(201, 223, 138, 0.15);
+    }
+
+    .blog-hero-glow {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(119, 171, 89, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201, 223, 138, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 55% 60%, rgba(54, 127, 45, 0.15) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+      animation: floatSlow 10s ease-in-out infinite alternate;
+    }
+
+    .blog-hero .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .blog-hero h1 {
+      color: #FFFFFF;
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .blog-hero p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.15rem;
+      line-height: 1.6;
+      margin: 0 auto;
+    }
+
+    .blog-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(255, 255, 255, 0.12);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 223, 138, 0.35);
+      color: #FFFFFF;
+      padding: 0.45rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
+      animation: heroBadgeFloat 4s ease-in-out infinite;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Category Filter Tabs */
+    .blog-filters {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 3.5rem 0 1rem;
+    }
+
+    .filter-btn {
+      background: var(--color-bg-white);
+      border: 1px solid rgba(119, 171, 89, 0.2);
+      color: var(--color-text-dark);
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--color-primary-dark);
+      color: #FFFFFF;
+      border-color: var(--color-primary-dark);
+      box-shadow: 0 4px 14px rgba(35, 76, 32, 0.2);
+    }
+
+    /* Blog Articles Container */
+    .blog-feed {
+      padding: 4.5rem 0 6rem;
+      background: var(--color-bg-canvas);
+    }
+
+    .blog-article-full {
+      background: var(--color-bg-white);
+      border-radius: 28px;
+      border: 1px solid rgba(119, 171, 89, 0.15);
+      box-shadow: 0 10px 40px rgba(35, 76, 32, 0.06);
+      overflow: hidden;
+      margin-bottom: 4.5rem;
+      scroll-margin-top: 110px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .blog-article-full:hover {
+      box-shadow: 0 16px 50px rgba(35, 76, 32, 0.1);
+    }
+
+    .article-hero-banner {
+      width: 100%;
+      height: 380px;
+      position: relative;
+      overflow: hidden;
+      background: var(--color-primary-very-light);
+    }
+
+    .article-hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body-wrapper {
+      padding: 3.5rem 4rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .article-header-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-tag {
+      background: var(--color-primary-very-light);
+      border: 1px solid var(--color-primary-light);
+      color: var(--color-primary);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+    }
+
+    .article-read-time {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .article-body-wrapper h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      color: var(--color-primary-dark);
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-lead {
+      font-size: 1.2rem;
+      color: var(--color-text-dark);
+      font-weight: 500;
+      line-height: 1.65;
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(119, 171, 89, 0.15);
+    }
+
+    .article-content {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-text-light);
+    }
+
+    .article-content h3 {
+      font-size: 1.45rem;
+      color: var(--color-primary-dark);
+      margin: 2.5rem 0 1rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+    }
+
+    .article-highlight-box {
+      background: var(--color-primary-very-light);
+      border-left: 4px solid var(--color-primary);
+      padding: 1.5rem 2rem;
+      border-radius: 0 16px 16px 0;
+      margin: 2.5rem 0;
+    }
+
+    .article-highlight-box h4 {
+      color: var(--color-primary-dark);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .article-highlight-box p {
+      margin-bottom: 0;
+      font-size: 0.98rem;
+      color: var(--color-primary-dark);
+    }
+
+    .article-author-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 2rem;
+      background: var(--color-bg-canvas);
+      border-radius: 20px;
+      margin-top: 3.5rem;
+      border: 1px solid rgba(119, 171, 89, 0.12);
+    }
+
+    .author-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(35, 76, 32, 0.15);
+    }
+
+    .author-info h4 {
+      font-size: 1.05rem;
+      color: var(--color-primary-dark);
+      margin-bottom: 0.25rem;
+      font-weight: 700;
+    }
+
+    .author-info span {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .article-footer-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(119, 171, 89, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .article-body-wrapper {
+        padding: 2rem 1.5rem;
+      }
+      .article-hero-banner {
+        height: 240px;
+      }
+      .article-author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo"><span class="logo-mark"><i class="fa-solid fa-seedling"></i></span><span class="logo-text">NAUTERA</span></a>
+      <ul class="nav-menu">
+        <li><a href="our-harvest.html" class="nav-link">Our Harvest</a></li>
+        <li><a href="for-growers.html" class="nav-link">For Growers</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="contact.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <nav class="mobile-nav">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="our-harvest.html" class="mobile-nav-link">Our Harvest</a>
+    <a href="for-growers.html" class="mobile-nav-link">For Growers</a>
+    <a href="about.html" class="mobile-nav-link">About Us</a>
+    <a href="blog.html" class="mobile-nav-link active">Blog &amp; Insights</a>
+    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Contact</a>
+  </nav>
+
+  <main>
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+      <div class="blog-hero-glow"></div>
+      <div class="container reveal">
+        <div class="blog-hero-badge">
+          <span class="hero-float-dot"></span>
+          <i class="fa-solid fa-book-open"></i> Edukasi &amp; Industri Vaname
+        </div>
+        <h1>Stories &amp; Industry Insights</h1>
+        <p>Kumpulan artikel, catatan riset lapangan, dan panduan praktis seputar budidaya udang vaname berkelanjutan, standar rantai dingin (cold chain), dan biosekuriti tambak modern.</p>
+      </div>
+    </section>
+
+    <!-- Articles Feed Section -->
+    <section class="blog-feed">
+      <div class="container">
+        
+        <!-- Category Filters -->
+        <div class="blog-filters reveal">
+          <button class="filter-btn active" data-filter="all">Semua Artikel</button>
+          <button class="filter-btn" data-filter="sdm">SDM &amp; Keahlian</button>
+          <button class="filter-btn" data-filter="coldchain">Hasil Panen &amp; Rantai Dingin</button>
+          <button class="filter-btn" data-filter="tambak">Manajemen Tambak</button>
+        </div>
+
+        <!-- Article 1: SDM Academy -->
+        <article class="blog-article-full reveal" id="mencetak-sdm-tambak" data-category="sdm">
+          <div class="article-hero-banner">
+            <div class="img-slot" style="min-height: 380px; border-radius: 0; border: none;">
+              <img src="assets/images/insight-academy-training.webp" alt="Nautera Academy Field Training" loading="lazy">
+              <div class="img-slot-fallback">
+                <span class="slot-icon"><i class="fa-solid fa-camera"></i></span>
+                <span class="slot-name">insight-academy-training.webp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-body-wrapper">
+            <div class="article-header-meta">
+              <span class="article-tag">SDM &amp; Keahlian</span>
+              <span class="article-read-time"><i class="fa-regular fa-clock"></i> 5 Menit Membaca</span>
+              <span class="article-read-time"><i class="fa-regular fa-calendar"></i> 8 Agustus 2026</span>
+            </div>
+
+            <h2>Mencetak SDM Tambak Profesional: Mengubah Intuisi Menjadi Keputusan Presisi</h2>
+            <p class="article-lead">
+              Industri budidaya udang vaname intensif tidak lagi bisa mengandalkan tebakan atau sekadar intuisi. Kunci keberhasilan siklus panen terletak pada kedisiplinan SOP, manajemen pakan berbasis biomassa nyata, dan kemampuan teknisi menganalisis data kualitas air harian.
+            </p>
+
+            <div class="article-content">
+              <h3>Tantangan Nyata di Tambak Pesisir</h3>
+              <p>
+                Banyak petambak menghadapi fluktuasi panen bukan karena bibit yang buruk atau pakan yang kurang, melainkan karena keterlambatan dalam mendeteksi perubahan parameter air kolam. Perubahan pH sekecil 0,5 poin atau lonjakan nitrit yang tidak terdeteksi dapat menyebabkan udang mengalami stres berat dan penurunan imunitas mendadak.
+              </p>
+              <p>
+                Selama bertahun-tahun, pengelolaan tambak tradisional bergantung pada kebiasaan yang tidak terdokumentasi. Ketika teknisi senior berganti, standar operasional kolam ikut berubah, menimbulkan risiko kegagalan yang tinggi bagi pemilik modal dan petambak kemitraan.
+              </p>
+
+              <div class="article-highlight-box">
+                <h4><i class="fa-solid fa-graduation-cap"></i> Pilar Utama Kurikulum Nautera Academy</h4>
+                <p>Nautera Academy mendidik calon teknisi lapangan dengan kombinasi 30% teori kimia air di kelas dan 70% simulasi langsung di tambak kemitraan Cipatujah.</p>
+              </div>
+
+              <h3>3 Kompetensi Inti yang Dibangun di Nautera Academy</h3>
+              <p>
+                <strong>1. Uji Laboratorium Air Harian:</strong> Setiap pagi dan petang, teknisi dilatih mengukur DO (Dissolved Oxygen), alkalinitas, salinitas, serta kepadatan plankton menggunakan checklist digital terstandar.
+              </p>
+              <p>
+                <strong>2. Kalkulasi Laju Pakan &amp; FCR Akurat:</strong> Menghitung feeding rate berdasarkan sampling biomassa mingguan untuk memastikan pakan habis dikonsumsi dalam waktu 2 jam, mencegah penumpukan bahan organik beracun di dasar kolam.
+              </p>
+              <p>
+                <strong>3. Mitigasi Biosekuriti &amp; Deteksi Dini:</strong> Mengidentifikasi gejala awal perubahan nafsu makan atau bercak pada cangkang sebelum wabah menyebar ke petak kolam lainnya.
+              </p>
+
+              <h3>Hasil Nyata: FCR Efisien dan Panen Konsisten</h3>
+              <p>
+                Dengan menempatkan lulusan tersertifikasi Nautera Academy di tambak mitra, angka rasio konversi pakan (FCR) berhasil ditekan hingga di bawah 1.3, meningkatkan margin keuntungan petambak sekaligus menjamin mutu udang yang seragam dan sehat saat dipanen.
+              </p>
+            </div>
+
+            <!-- Author Card -->
+            <div class="article-author-card">
+              <div class="author-avatar">R</div>
+              <div class="author-info">
+                <h4>Ditulis oleh: Rohlan</h4>
+                <span>Head of Nautera Academy &bull; Praktisi Akuakultur Pesisir</span>
+              </div>
+            </div>
+
+            <div class="article-footer-nav">
+              <a href="for-growers.html#academy-details" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">Pelajari Program Academy <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#insights" class="btn-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="fa-solid fa-arrow-up"></i> Kembali ke Atas</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 2: Cold Chain & Quality -->
+        <article class="blog-article-full reveal" id="menjaga-kesegaran-cold-chain" data-category="coldchain">
+          <div class="article-hero-banner">
+            <div class="img-slot" style="min-height: 380px; border-radius: 0; border: none;">
+              <img src="assets/images/insight-cold-chain.webp" alt="Cold Chain Management" loading="lazy">
+              <div class="img-slot-fallback">
+                <span class="slot-icon"><i class="fa-solid fa-camera"></i></span>
+                <span class="slot-name">insight-cold-chain.webp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-body-wrapper">
+            <div class="article-header-meta">
+              <span class="article-tag">Hasil Panen &amp; Rantai Dingin</span>
+              <span class="article-read-time"><i class="fa-regular fa-clock"></i> 4 Menit Membaca</span>
+              <span class="article-read-time"><i class="fa-regular fa-calendar"></i> 5 Agustus 2026</span>
+            </div>
+
+            <h2>Menjaga Kesegaran Udang Vaname: Pentingnya Cold-Chain dari Tambak hingga Dapur</h2>
+            <p class="article-lead">
+              Rasa manis alami dan tekstur daging udang yang kenyal (crunchy) ditentukan dalam 60 menit pertama setelah udang diangkat dari kolam. Inilah alasan mengapa Nautera menerapkan protokol rantai dingin tertutup (closed cold-chain) tanpa toleransi.
+            </p>
+
+            <div class="article-content">
+              <h3>Golden Hour Pasca Panen Udang</h3>
+              <p>
+                Udang adalah komoditas perikanan berkadar protein tinggi yang sangat peka terhadap degradasi enzim dan bakteri jika dibiarkan terpapar suhu ruangan. Begitu diangkat dari kolam, penurunan suhu secara instan adalah harga mati untuk mengunci protein aktomiosin di dalam serat daging udang.
+              </p>
+
+              <div class="article-highlight-box">
+                <h4><i class="fa-solid fa-snowflake"></i> Protokol Slurry Ice Nautera</h4>
+                <p>Begitu jaring panen diangkat, udang langsung dicelupkan ke dalam bak peredam suhu berisi bubur es (slurry ice) bersuhu 0&deg;C hingga -1&deg;C dalam waktu kurang dari 3 menit.</p>
+              </div>
+
+              <h3>Mengapa Kami Menolak Glazing Es Berlebih?</h3>
+              <p>
+                Praktik umum di pasar sering menambahkan lapisan es tebal (glazing hingga 30-40%) yang membebani pembeli saat ditimbang. Di Nautera, kami memegang teguh prinsip <strong>timbangan amanah</strong>:
+              </p>
+              <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">1 kg yang Anda bayar adalah 1 kg berat bersih daging udang sesungguhnya.</li>
+                <li style="margin-bottom: 0.5rem;">Grading ukuran dijamin presisi tanpa pencampuran size kecil dan besar dalam satu koli.</li>
+                <li style="margin-bottom: 0.5rem;">Distribusi menggunakan armada berpendingin suhu konstan (-18&deg;C untuk beku, 0-2&deg;C untuk segar).</li>
+              </ul>
+
+              <h3>Dari Shrimply Distribution Hub Menuju Dapur Anda</h3>
+              <p>
+                Fasilitas Shrimply Distribution Hub di Bandung Raya bertindak sebagai hub distribusi pusat higienis. Dari sini, udang siap dipasok ke restoran bintang lima, katering profesional, hingga meja makan keluarga dalam kualitas terbaik tanpa kompromi.
+              </p>
+            </div>
+
+            <!-- Author Card -->
+            <div class="article-author-card">
+              <div class="author-avatar">F</div>
+              <div class="author-info">
+                <h4>Ditulis oleh: M Faris Muslimin</h4>
+                <span>Head of Supply Chain &bull; Nautera Indonesia</span>
+              </div>
+            </div>
+
+            <div class="article-footer-nav">
+              <a href="our-harvest.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">Lihat Produk &amp; Ukuran <i class="fa-solid fa-arrow-right"></i></a>
+              <a href="#insights" class="btn-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="fa-solid fa-arrow-up"></i> Kembali ke Atas</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Article 3: Biosecurity -->
+        <article class="blog-article-full reveal" id="biosekuritas-tambak" data-category="tambak">
+          <div class="article-hero-banner">
+            <div class="img-slot" style="min-height: 380px; border-radius: 0; border: none;">
+              <img src="assets/images/insight-biosecure.webp" alt="Biosekuritas Tambak" loading="lazy">
+              <div class="img-slot-fallback">
+                <span class="slot-icon"><i class="fa-solid fa-camera"></i></span>
+                <span class="slot-name">insight-biosecure.webp</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-body-wrapper">
+            <div class="article-header-meta">
+              <span class="article-tag">Manajemen Tambak</span>
+              <span class="article-read-time"><i class="fa-regular fa-clock"></i> 6 Menit Membaca</span>
+              <span class="article-read-time"><i class="fa-regular fa-calendar"></i> 0 Agustus 2026</span>
+            </div>
+
+            <h2>Kunci Tambak Vaname Berkelanjutan: Penerapan Biosekuritas Fisik Ketat</h2>
+            <p class="article-lead">
+              Mencegah selalu lebih murah dan efektif daripada mengobati. Di era budidaya intensif, biosekuritas fisik berlapis dan filter air bertingkat adalah benteng utama pertahanan tambak modern dari ancaman patogen liar.
+            </p>
+
+            <div class="article-content">
+              <h3>Filosofi Biosekuriti Bebas Kimia Terlarang</h3>
+              <p>
+                Banyak kegagalan budidaya dipicu oleh ketergantungan pada zat kimia keras atau antibiotik saat penyakit sudah menyerang. Nautera mengambil pendekatan sebaliknya: menjaga ekosistem tambak tetap steril secara fisik dan mengandalkan keseimbangan probiotik alami.
+              </p>
+
+              <div class="article-highlight-box">
+                <h4><i class="fa-solid fa-shield-halved"></i> Tiga Lapis Pertahanan Fisik Tambak Nautera</h4>
+                <p>1. <strong>Inlet Filtration:</strong> Filter mekanis bertingkat 200&ndash;500 micron untuk menyaring larva kepiting dan predator air.<br>
+                2. <strong>Crab &amp; Bird Barrier:</strong> Pagar jaring keliling dan senar atas kolam untuk mencegah hewan liar pembawa vektor virus.<br>
+                3. <strong>Sanitasi Alas Kaki &amp; Peralatan:</strong> Kolam desinfeksi celup kaki (footbath) di setiap pintu masuk petak kolam.</p>
+              </div>
+
+            
+            <p>Biosekuritas bukan sekadar formalitas desinfeksi gerbang masuk tambak. Dalam budidaya udang intensif presisi, biosekuritas merupakan ekosistem pertahanan berlapis yang mencakup filtrasi fisik air laut, sterilisasi tandon pemukiman, hingga proteksi kepiting liar dan burung pemangsa sebagai vektor penyakit.</p>
+
+            <div class="article-highlight-box">
+              <h4>Filter 3 Tahap Nautera Farm:</h4>
+              <p>Inlet air laut disaring bertahap melalui filter pasir silika makro, tandon sedimentasi biologis, dan sterilisasi ozon/UV sebelum dialirkan ke kolam budidaya.</p>
+            </div>
+
+            <h3>Keseimbangan Ekosistem Pesisir</h3>
+            <p>Tambak yang sehat tidak boleh merusak lingkungan sekitarnya. Dengan mempertahankan sabuk hijau bakau (mangrove) di sekeliling area tambak, kualitas air laut alami tetap terlindungi dan meminimalisir risiko penularan patogen dari tambak lain.</p>
+
+            <div class="article-author-card">
+              <div class="author-avatar">Y</div>
+              <div class="author-info">
+                <h4>Yudi Darmawan</h4>
+                <span>Head of Farm Operations &bull; Nautera Farm Cipatujah</span>
+              </div>
+            </div>
+
+            <div class="article-footer-nav">
+              <a href="index.html#insights" class="btn-text"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+              <a href="for-growers.html#kemitraan" class="btn btn-secondary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem;">Pelajari Kemitraan KSO <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background-color: var(--color-primary-very-light); border-top: 1px solid rgba(119,171,89,0.1); border-bottom: 1px solid rgba(119,171,89,0.1); padding: 5rem 0;">
+      <div class="container">
+        <div class="section-header center reveal" style="margin-bottom: 2rem;">
+          <span class="section-label">Hubungi Nautera</span>
+          <h2>Bring Premium Quality to Your Kitchen Today.</h2>
+          <p>Dapatkan pasokan udang vaname segar terpercaya dengan standar mutu terjamin untuk keluarga dan bisnis Anda.</p>
+        </div>
+        <div class="flex-center reveal" style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin: 0 auto; width: 100%; text-align: center;">
+          <a href="contact.html?type=family" class="btn btn-primary">Pesan untuk Keluarga</a>
+          <a href="contact.html?type=b2b" class="btn btn-secondary">Bermitra (Grosir B2B)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section (Balanced 4-Column Grid) -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-top">
+      <!-- Col 1: Brand -->
+      <div class="footer-brand">
+        <div class="brand-logo">NAUTERA</div>
+        <span class="brand-sub">INDONESIA</span>
+        <p>Ekosistem tata kelola budidaya dan rantai pasok udang vaname terintegrasi. Mengawal komitmen jujur di hulu hingga kepastian mutu di hilir bersama Shrimply.</p>
+        <div class="badge badge-pulse" style="margin-top: 0.5rem; background: rgba(201, 223, 138, 0.18); border: 1px solid rgba(201, 223, 138, 0.35); color: var(--color-primary-light); font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 30px; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.8rem;">
+          <i class="fa-solid fa-circle-check" style="color: var(--color-primary-light);"></i> Vaname Segar &amp; Amanah
+        </div>
+      </div>
+
+      <!-- Col 2: NAVIGASI -->
+      <div>
+        <h4>NAVIGASI</h4>
+        <ul class="footer-links">
+          <li><a href="our-harvest.html">Our Harvest (Produk)</a></li>
+          <li><a href="for-growers.html">For Growers (Kemitraan)</a></li>
+          <li><a href="about.html">About Us (Tentang Kami)</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="contact.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: EKOSISTEM -->
+      <div>
+        <h4>EKOSISTEM</h4>
+        <ul class="footer-links">
+          <li><a href="for-growers.html#kemitraan">KSO Tambak Presisi</a></li>
+          <li><a href="for-growers.html#academy">Nautera Academy</a></li>
+          <li><a href="for-growers.html#supply">Suplai Pakan &amp; Saprotam</a></li>
+          <li><a href="our-harvest.html">Shrimply B2B &amp; Ritel</a></li>
+          <li><a href="about.html#career">Karir &amp; Talenta</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: KONTAK & HUB -->
+      <div class="footer-contact-block">
+        <h4>KONTAK &amp; HUB</h4>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div>
+            <strong>Email Resmi</strong>
+            <a href="mailto:sales@nautera.id">sales@nautera.id</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div>
+            <strong>WhatsApp Sales</strong>
+            <a href="tel:+6281234567890">+62 812-3456-7890</a>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-building-user"></i>
+          </div>
+          <div>
+            <strong>Kantor Manajemen</strong>
+            <span>Productive Building Lt. 2, Bandung 40273.</span>
+          </div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <div>
+            <strong>Mitra Logistik &amp; Cold Chain (Hilir)</strong>
+            <span>Bandung Raya &amp; Cipatujah Tasikmalaya.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span class="footer-tagline">NAUTERA &mdash; Mengawal Kualitas, Menjaga Muamalah.</span>
+      <div class="footer-socials">
+        <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+      <span>&copy; 2026 Nautera Indonesia. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <div class="overlay"></div>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script>
+    // Category filter interactions
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.blog-article-full').forEach(article => {
+          if (filter === 'all' || article.getAttribute('data-category') === filter) {
+            article.style.display = 'block';
+          } else {
+            article.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
