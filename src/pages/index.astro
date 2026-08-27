@@ -7,7 +7,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-bg-media">
-        <img src="assets/images/background-home.jpg" alt="" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='assets/images/hero-home-bg.png';}else{this.style.display='none';}">
+        <img src="/assets/images/background-home.jpg" alt="" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/assets/images/hero-home-bg.png';}else{this.style.display='none';}">
       </div>
       <div class="hero-overlay-grid"></div>
       <div class="container hero-grid">
@@ -115,7 +115,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="timeline-col reveal">
               <div class="timeline-img-box">
                 <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 20px;">
-                  <img src="assets/images/st1.png" alt="Budidaya Berkelanjutan" loading="lazy">
+                  <img src="/assets/images/st1.png" alt="Budidaya Berkelanjutan" loading="lazy">
                   <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">step-1.webp</span></div>
                 </div>
               </div>
@@ -128,7 +128,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="timeline-col reveal delay-100">
               <div class="timeline-img-box">
                 <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 20px;">
-                  <img src="assets/images/st2.png" alt="Panen Selektif" loading="lazy">
+                  <img src="/assets/images/st2.png" alt="Panen Selektif" loading="lazy">
                   <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">step-2.webp</span></div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="timeline-col reveal delay-200">
               <div class="timeline-img-box">
                 <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 20px;">
-                  <img src="assets/images/st3.png" alt="Proses Higienis" loading="lazy">
+                  <img src="/assets/images/st3.png" alt="Proses Higienis" loading="lazy">
                   <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">step-3.webp</span></div>
                 </div>
               </div>
@@ -154,7 +154,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="timeline-col reveal delay-300">
               <div class="timeline-img-box">
                 <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 20px;">
-                  <img src="assets/images/st4.png" alt="Distribusi Terjaga" loading="lazy">
+                  <img src="/assets/images/st4.png" alt="Distribusi Terjaga" loading="lazy">
                   <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">step-4.webp</span></div>
                 </div>
               </div>
@@ -239,7 +239,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <!-- Card 1 -->
             <div class="budidaya-photo-card">
               <div class="img-slot">
-                <img src="assets/images/ps1 (1).jpg" alt="Dikelola Profesional" loading="lazy">
+                <img src="/assets/images/ps1 (1).jpg" alt="Dikelola Profesional" loading="lazy">
                 <div class="img-slot-fallback"><span class="slot-icon"></span><span class="slot-name"></span></div>
                 <!-- Floating Glowing Dots (Nautera Natural Palette) -->
                 <span class="floating-glow-dot dot-lime" style="width: 16px; height: 16px; top: 16%; right: 18%; animation-delay: 0s;"></span>
@@ -254,7 +254,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <!-- Card 2 -->
             <div class="budidaya-photo-card">
               <div class="img-slot">
-                <img src="assets/images/ps1 (2).jpg" alt="Udang Sehat, Konsumen Tenang" loading="lazy">
+                <img src="/assets/images/ps1 (2).jpg" alt="Udang Sehat, Konsumen Tenang" loading="lazy">
                 <div class="img-slot-fallback"><span class="slot-icon"></span><span class="slot-name"></span></div>
                 <!-- Floating Glowing Dots (Nautera Natural Palette) -->
                 <span class="floating-glow-dot dot-primary" style="width: 18px; height: 18px; top: 18%; left: 16%; animation-delay: 0.6s;"></span>
@@ -316,7 +316,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="env-banner-right-side">
             <!-- Halal Stamp -->
             <div class="cert-stamp-refined" title="Halal Indonesia">
-              <img src="assets/images/halal.jpg" alt="Halal Indonesia" class="cert-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <img src="/assets/images/halal.jpg" alt="Halal Indonesia" class="cert-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
               <div class="cert-fallback" style="display: none; flex-direction: column; align-items: center;">
                 <span class="cert-icon"><i class="fa-solid fa-star-and-crescent"></i></span>
                 <span class="cert-name">HALAL<br>INDONESIA</span>
@@ -324,7 +324,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
             <!-- HACCP Stamp -->
             <div class="cert-stamp-refined" title="Food Safety HACCP Certified">
-              <img src="assets/images/haccp.avif" alt="Food Safety HACCP Certified" class="cert-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <img src="/assets/images/haccp.avif" alt="Food Safety HACCP Certified" class="cert-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
               <div class="cert-fallback" style="display: none; flex-direction: column; align-items: center;">
                 <span class="cert-icon"><i class="fa-solid fa-shield"></i></span>
                 <span class="cert-name">FOOD SAFETY<br>HACCP<br>CERTIFIED</span>
@@ -358,7 +358,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="reveal delay-200" style="display: flex; align-items: center;">
             <div class="academy-photo-card" style="width: 100%;">
               <div class="img-slot">
-                <img src="assets/images/aca.png" alt="Nautera Academy Students Learning" loading="lazy">
+                <img src="/assets/images/aca.png" alt="Nautera Academy Students Learning" loading="lazy">
                 <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">academy-classroom.webp</span></div>
               </div>
               <div class="academy-photo-overlay">
@@ -373,7 +373,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <!-- Giant Cooked Shrimp Banner Section -->
     <section class="giant-banner-section">
       <div class="img-slot img-slot-flush" style="position:absolute;inset:0;min-height:0;z-index:0;border-radius:0;">
-        <img src="assets/images/u1.jpg" alt="Hidangan Udang Premium" loading="lazy">
+        <img src="/assets/images/u1.jpg" alt="Hidangan Udang Premium" loading="lazy">
         <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">cooked-shrimp-plate.webp</span></div>
       </div>
       <div class="giant-banner-overlay"></div>
@@ -398,7 +398,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- Article 1 -->
           <div class="card article-card reveal">
             <div class="img-slot">
-              <img src="assets/images/insight-academy-training.webp" alt="Nautera Academy Field Training" loading="lazy">
+              <img src="/assets/images/insight-academy-training.webp" alt="Nautera Academy Field Training" loading="lazy">
               <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">insight-academy-training.webp</span></div>
             </div>
             <div class="article-card-content">
@@ -411,7 +411,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- Article 2 -->
           <div class="card article-card reveal delay-100">
             <div class="img-slot">
-              <img src="assets/images/insight-cold-chain.webp" alt="Cold Chain Management" loading="lazy">
+              <img src="/assets/images/insight-cold-chain.webp" alt="Cold Chain Management" loading="lazy">
               <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">insight-cold-chain.webp</span></div>
             </div>
             <div class="article-card-content">
@@ -424,7 +424,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- Article 3 -->
           <div class="card article-card reveal delay-200">
             <div class="img-slot">
-              <img src="assets/images/insight-biosecure.webp" alt="Biosekuritas Tambak" loading="lazy">
+              <img src="/assets/images/insight-biosecure.webp" alt="Biosekuritas Tambak" loading="lazy">
               <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">insight-biosecure.webp</span></div>
             </div>
             <div class="article-card-content">
@@ -464,7 +464,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       padding-top: 8rem;
       padding-bottom: 6rem;
       background-color: var(--color-primary-very-light);
-      background-image: linear-gradient(rgba(250, 251, 249, 0.88), rgba(250, 251, 249, 0.92)), url('assets/images/home/hero-home.webp');
+      background-image: linear-gradient(rgba(250, 251, 249, 0.88), rgba(250, 251, 249, 0.92)), url('/assets/images/home/hero-home.webp');
       background-size: cover;
       background-position: center;
       overflow: hidden;

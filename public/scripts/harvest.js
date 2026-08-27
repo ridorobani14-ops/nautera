@@ -174,7 +174,7 @@ function initSizeSelector() {
         if (img && slot) {
           slot.classList.remove('loaded', 'img-error');
           const fileName = data.imgFile || `${sizeKey}.png`;
-          img.src = `assets/images/${fileName}`;
+          img.src = `/assets/images/${fileName}`;
           img.alt = data.title;
           if (imgName) imgName.textContent = fileName;
           checkSlotImage(slot, img);
