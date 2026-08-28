@@ -210,15 +210,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <!-- Buttons Below Grid -->
-        <div class="flex-center reveal delay-200" style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-top: 3.5rem; flex-wrap: wrap; margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
-          <a href="/contact?type=family" class="btn btn-secondary" style="padding: 1rem 2.5rem; background-color: #FFFFFF; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">Pesan untuk Keluarga</a>
-          <a href="/contact?type=b2b" class="btn btn-primary" style="padding: 1rem 2.5rem; background-color: var(--color-primary-dark);">Bermitra (Grosir B2B)</a>
+        <!-- Single Alive Modern CTA Button -->
+        <div class="flex-center reveal delay-200" style="display: flex; justify-content: center; align-items: center; margin-top: 3.5rem; width: 100%; text-align: center;">
+          <a href="/contact?type=b2b" class="btn-harvest-action">
+            <span>Pesan &amp; Bermitra Pasokan Udang</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Quality Standards Section -->
+    <!-- Quality Standards Section (4-Card Grid) -->
     <section style="border-top: 1px solid rgba(119,171,89,0.06);">
       <div class="container">
         <div class="section-header center reveal">
@@ -226,10 +228,59 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <h2>Quality Standards at Every Point</h2>
           <p>Setiap gram udang Nautera ditangani di fasilitas pengolahan dengan standar food safety dan pengawasan mutu yang ketat.</p>
         </div>
-        
-        <div class="quality-banner-wrapper reveal delay-100" style="max-width: 820px; margin: 2.25rem auto 0;">
-          <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(35, 76, 32, 0.1); border: 1px solid rgba(119,171,89,0.2);">
-            <img src="/assets/images/standar.jpg" alt="Quality Standards at Every Point" style="width: 100%; height: auto; display: block; object-fit: contain;">
+
+        <div class="quality-grid-row" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
+          <!-- Step 1: With photo -->
+          <div class="timeline-col reveal delay-100">
+            <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
+                <img src="/assets/images/standar.jpg" alt="Sortir &amp; Grading Manual" loading="lazy" style="object-fit: cover; object-position: left top;">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">standar.jpg</span></div>
+              </div>
+            </div>
+            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">01</span> Sortir &amp; Grading
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pemeriksaan awal kesegaran, keutuhan fisik, serta pemisahan ukuran udang sesuai spesifikasi.</p>
+          </div>
+
+          <!-- Step 2: Empty slot for user -->
+          <div class="timeline-col reveal delay-200">
+            <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">Tambah Foto Step 2</span></div>
+              </div>
+            </div>
+            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">02</span> Pencucian &amp; Sanitasi
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pembersihan menggunakan air dingin higienis berstandar food safety untuk menjaga tekstur udang.</p>
+          </div>
+
+          <!-- Step 3: Empty slot for user -->
+          <div class="timeline-col reveal delay-300">
+            <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">Tambah Foto Step 3</span></div>
+              </div>
+            </div>
+            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">03</span> Pembekuan Cepat
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pembekuan cepat untuk mengunci rasa manis alami, kadar air alami, dan nutrisi udang segar.</p>
+          </div>
+
+          <!-- Step 4: Empty slot for user -->
+          <div class="timeline-col reveal delay-400">
+            <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
+                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">Tambah Foto Step 4</span></div>
+              </div>
+            </div>
+            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">04</span> Cold Storage
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pengemasan rapi dan penyimpanan suhu terkontrol ketat hingga siap dikirim ke konsumen.</p>
           </div>
         </div>
       </div>

@@ -46,10 +46,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <!-- Dashboard Layout Grid -->
-        <div class="dashboard-grid-wrapper" style="display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 1.5rem; align-items: center; margin-top: 2rem;">
+        <div class="dashboard-grid-wrapper" style="display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 1.5rem; align-items: center; margin-top: 2rem; position: relative;">
           
+          <!-- Connecting SVG Lines (Nautera Green Palette) -->
+          <svg style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;" viewBox="0 0 1000 400" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="lineGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#367F2D" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#77AB59" stop-opacity="0.85"/>
+              </linearGradient>
+              <linearGradient id="lineGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#77AB59" stop-opacity="0.85"/>
+                <stop offset="100%" stop-color="#367F2D" stop-opacity="0.25"/>
+              </linearGradient>
+            </defs>
+            <!-- Line to Top-Left Card -->
+            <path d="M 500 200 C 400 200, 340 85, 290 85" fill="none" stroke="url(#lineGradLeft)" stroke-width="2.5" stroke-dasharray="6 6">
+              <animate attributeName="stroke-dashoffset" from="24" to="0" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <!-- Line to Bottom-Left Card -->
+            <path d="M 500 200 C 400 200, 340 315, 290 315" fill="none" stroke="url(#lineGradLeft)" stroke-width="2.5" stroke-dasharray="6 6">
+              <animate attributeName="stroke-dashoffset" from="24" to="0" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <!-- Line to Top-Right Card -->
+            <path d="M 500 200 C 600 200, 660 85, 710 85" fill="none" stroke="url(#lineGradRight)" stroke-width="2.5" stroke-dasharray="6 6">
+              <animate attributeName="stroke-dashoffset" from="0" to="24" dur="2s" repeatCount="indefinite"/>
+            </path>
+            <!-- Line to Bottom-Right Card -->
+            <path d="M 500 200 C 600 200, 660 315, 710 315" fill="none" stroke="url(#lineGradRight)" stroke-width="2.5" stroke-dasharray="6 6">
+              <animate attributeName="stroke-dashoffset" from="0" to="24" dur="2s" repeatCount="indefinite"/>
+            </path>
+          </svg>
+
           <!-- Column Left: System & SDM -->
-          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="display: flex; flex-direction: column; gap: 1.5rem; position: relative; z-index: 2;">
             
             <!-- Dashboard Card 1: NAUTERA SYSTEM -->
             <div class="dash-card-light reveal-left delay-100">
@@ -78,7 +108,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
                 <div style="display: flex; align-items: center; gap: 0.6rem;">
                   <span style="background: var(--color-primary-very-light); color: var(--color-primary); padding: 0.4rem; border-radius: 10px; display: inline-flex;">
-                    <svg class="svg-icon svg-icon-sm" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    <img src="/assets/images/shrimp-mascot.png" alt="SDM Mascot" style="width: 24px; height: 24px; object-fit: contain;">
                   </span>
                   <h4 style="color: var(--color-primary-dark); font-size: 1rem; margin: 0; font-weight: 800; letter-spacing: 0.05em;">NAUTERA SDM</h4>
                 </div>
@@ -95,29 +125,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Column Center: Glowing Interactive Core Reactor Node -->
-          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 2rem 0;">
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 2rem 0; z-index: 2;">
             
-            <!-- Animated Red Directional Arrow Rings -->
-            <svg style="position: absolute; width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 1; overflow: visible;" viewBox="0 0 300 300">
-              <!-- Outer ring: red arrows flowing clockwise -->
-              <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(220,38,38,0.15)" stroke-width="1.5"/>
-              <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(220,38,38,0.7)" stroke-width="2"
-                stroke-dasharray="12 28" stroke-linecap="round">
-                <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="8s" repeatCount="indefinite"/>
+            <!-- Animated Green Theme Rings -->
+            <svg style="position: absolute; width: 280px; height: 280px; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 1; overflow: visible;" viewBox="0 0 280 280">
+              <circle cx="140" cy="140" r="130" fill="none" stroke="rgba(119,171,89,0.2)" stroke-width="1.5"/>
+              <circle cx="140" cy="140" r="130" fill="none" stroke="#77AB59" stroke-width="2" stroke-dasharray="10 24" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 140 140" to="360 140 140" dur="10s" repeatCount="indefinite"/>
               </circle>
-              <!-- Arrowhead markers on outer ring -->
-              <g>
-                <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="8s" repeatCount="indefinite"/>
-                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)"/>
-                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)" transform="rotate(90 150 150)"/>
-                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)" transform="rotate(180 150 150)"/>
-                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)" transform="rotate(270 150 150)"/>
-              </g>
-              <!-- Inner ring: red arrows flowing counter-clockwise -->
-              <circle cx="150" cy="150" r="110" fill="none" stroke="rgba(220,38,38,0.1)" stroke-width="1.5"/>
-              <circle cx="150" cy="150" r="110" fill="none" stroke="rgba(220,38,38,0.55)" stroke-width="1.5"
-                stroke-dasharray="8 22" stroke-linecap="round">
-                <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="12s" repeatCount="indefinite"/>
+              <circle cx="140" cy="140" r="105" fill="none" stroke="rgba(54,127,45,0.3)" stroke-width="1.5"/>
+              <circle cx="140" cy="140" r="105" fill="none" stroke="#367F2D" stroke-width="2" stroke-dasharray="6 18" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="360 140 140" to="0 140 140" dur="14s" repeatCount="indefinite"/>
               </circle>
             </svg>
 

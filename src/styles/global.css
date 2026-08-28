@@ -1036,3 +1036,46 @@ footer a:hover { color: var(--color-primary-light); padding-left: 4px; }
   -webkit-text-stroke: 0px !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
 }
+
+/* Modern Squircle Harvest Action Button */
+.btn-harvest-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.05rem 2.6rem;
+  background: linear-gradient(135deg, #367F2D 0%, #234C20 100%);
+  color: #FFFFFF !important;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 14px;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(35, 76, 32, 0.22);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-harvest-action:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(35, 76, 32, 0.32);
+}
+
+.btn-harvest-action i {
+  transition: transform 0.3s ease;
+}
+
+.btn-harvest-action:hover i {
+  transform: translateX(5px);
+}
+
+@media (max-width: 991px) {
+  .quality-grid-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .quality-grid-row {
+    grid-template-columns: 1fr !important;
+  }
+}
