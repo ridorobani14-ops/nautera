@@ -97,19 +97,39 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- Column Center: Glowing Interactive Core Reactor Node -->
           <div style="display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; padding: 2rem 0;">
             
-            <!-- Rotating Ring Vectors -->
-            <div style="width: 260px; height: 260px; border-radius: 50%; border: 2px dashed rgba(119, 171, 89, 0.4); position: absolute; animation: spinRing 20s linear infinite; pointer-events: none;"></div>
-            <div style="width: 290px; height: 290px; border-radius: 50%; border: 1px solid rgba(54, 127, 45, 0.2); position: absolute; animation: spinRing 30s linear infinite reverse; pointer-events: none;"></div>
+            <!-- Animated Red Directional Arrow Rings -->
+            <svg style="position: absolute; width: 300px; height: 300px; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 1; overflow: visible;" viewBox="0 0 300 300">
+              <!-- Outer ring: red arrows flowing clockwise -->
+              <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(220,38,38,0.15)" stroke-width="1.5"/>
+              <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(220,38,38,0.7)" stroke-width="2"
+                stroke-dasharray="12 28" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="8s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Arrowhead markers on outer ring -->
+              <g>
+                <animateTransform attributeName="transform" type="rotate" from="0 150 150" to="360 150 150" dur="8s" repeatCount="indefinite"/>
+                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)"/>
+                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)" transform="rotate(90 150 150)"/>
+                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)" transform="rotate(180 150 150)"/>
+                <polygon points="150,12 155,22 145,22" fill="rgba(220,38,38,0.8)" transform="rotate(270 150 150)"/>
+              </g>
+              <!-- Inner ring: red arrows flowing counter-clockwise -->
+              <circle cx="150" cy="150" r="110" fill="none" stroke="rgba(220,38,38,0.1)" stroke-width="1.5"/>
+              <circle cx="150" cy="150" r="110" fill="none" stroke="rgba(220,38,38,0.55)" stroke-width="1.5"
+                stroke-dasharray="8 22" stroke-linecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="360 150 150" to="0 150 150" dur="12s" repeatCount="indefinite"/>
+              </circle>
+            </svg>
 
             <!-- Core Hub Badge -->
-            <div class="dash-core-hub-light reveal-scale delay-200">
+            <div class="dash-core-hub-light reveal-scale delay-200" style="position: relative; z-index: 2;">
               <svg class="svg-icon svg-icon-lg" style="color: #F1F7DB; margin-bottom: 0.4rem; animation: floatSlow 4s ease-in-out infinite alternate;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               <h3 style="color: #FFFFFF; font-size: 1.05rem; font-weight: 800; margin-bottom: 0.2rem; letter-spacing: 0.05em;">NAUTERA CORE</h3>
               <span style="font-size: 0.72rem; color: #C9DF8A; font-weight: 700; line-height: 1.3;">Precision Farm Management</span>
             </div>
 
             <!-- Realtime Metrics Ticker -->
-            <div style="margin-top: 2rem; background: #FFFFFF; border: 1px solid var(--color-primary-light); border-radius: 30px; padding: 0.5rem 1.25rem; font-size: 0.8rem; color: var(--color-primary-dark); font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(35,76,32,0.06);">
+            <div style="margin-top: 2rem; position: relative; z-index: 2; background: #FFFFFF; border: 1px solid var(--color-primary-light); border-radius: 30px; padding: 0.5rem 1.25rem; font-size: 0.8rem; color: var(--color-primary-dark); font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(35,76,32,0.06);">
               <span style="color: var(--color-primary);">STATUS:</span> OPTIMAL HARVEST YIELD</div>
           </div>
 
@@ -188,7 +208,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="grid-2">
           <!-- Card 1 -->
           <div class="card reveal">
-            <h3 style="display: flex; align-items: center; gap: 0.75rem;"><i class="fa-solid fa-graduation-cap" style="color: var(--color-primary);"></i> SDM Bersertifikat Nautera Academy</h3>
+            <h3 style="display: flex; align-items: center; gap: 0.75rem;"><img src="/assets/images/shrimp-mascot.png" alt="Nautera Academy Mascot" style="width: 40px; height: 40px; object-fit: contain;"> SDM Bersertifikat Nautera Academy</h3>
             <p style="margin-bottom: 0; font-size: 0.95rem;">Dikelola oleh teknisi dan operator tambak terlatih yang dibekali pemahaman mendalam tentang biosecurity, manajemen air, dan kesiapsiagaan mitigasi risiko di lapangan.</p>
           </div>
           <!-- Card 2 -->
@@ -352,8 +372,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                   <i class="fa-solid fa-truck-fast"></i>
                 </div>
                 <div class="benefit-card-text">
-                  <strong>Penanganan Pasca Panen Higienis</strong>
-                  <span>Terhubung langsung ke Shrimply Cold-Chain Distribution Hub.</span>
+                  <strong>Penanganan Pasca Panen</strong>
+                  <span>Penanganan udang segar menggunakan slurry ice yang menjaga mutu hingga ke tangan konsumen.</span>
                 </div>
               </div>
 

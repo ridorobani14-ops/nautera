@@ -989,26 +989,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .budidaya-right-cards {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.6rem;
       height: 100%;
+      min-height: 420px;
+      border-radius: 20px;
+      overflow: hidden;
     }
     
     .budidaya-photo-card {
       background-color: var(--color-bg-white);
-      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(35, 76, 32, 0.06);
-      border: 1px solid rgba(119, 171, 89, 0.15);
       display: flex;
       flex-direction: column;
       height: 100%;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
     }
 
     .budidaya-photo-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 28px rgba(35, 76, 32, 0.12);
+      transform: scale(1.02);
+      z-index: 2;
     }
 
     .budidaya-photo-card .img-slot {
@@ -1016,17 +1017,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       overflow: hidden;
       flex: 1 1 auto;
       height: 100% !important;
-      min-height: 155px !important;
+      min-height: 200px !important;
       border-radius: 0;
       border: none;
     }
 
+    /* Image zooms in slightly on hover */
+    .budidaya-photo-card:hover .img-slot img {
+      transform: scale(1.05);
+      transition: transform 0.5s ease;
+    }
+
+    /* Overlay label pinned bottom */
     .budidaya-photo-content {
-      padding: 0.9rem 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(to top, rgba(20,50,18,0.75) 0%, transparent 100%);
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      flex: 0 0 auto;
+      gap: 0.2rem;
+      z-index: 2;
     }
 
     /* Floating Glowing Dot Nodes (Nautera Natural Palette) */
@@ -1090,20 +1103,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     
     .budidaya-pill-title {
       align-self: flex-start;
-      background-color: var(--color-primary-very-light);
-      border: 1px solid var(--color-primary-light);
-      color: var(--color-primary-dark);
+      background-color: rgba(20,50,18,0.55);
+      border: 1px solid rgba(201,223,138,0.5);
+      color: #FFFFFF;
       font-weight: 700;
-      font-size: 0.75rem;
-      padding: 0.35rem 0.85rem;
+      font-size: 0.82rem;
+      padding: 0.3rem 0.85rem;
       border-radius: 30px;
+      backdrop-filter: blur(4px);
     }
     
     .budidaya-photo-content p {
       font-size: 0.8rem;
-      line-height: 1.45;
+      line-height: 1.4;
       margin-bottom: 0;
-      flex-grow: 1;
+      color: rgba(255,255,255,0.9);
     }
     
     /* Environmental Values Banner Refined */
