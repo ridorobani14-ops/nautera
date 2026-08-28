@@ -227,61 +227,65 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p>Setiap gram udang Nautera ditangani di fasilitas pengolahan dengan standar food safety dan pengawasan mutu yang ketat.</p>
         </div>
 
-        <div class="quality-grid-row" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
-          <!-- Step 1: Panen Tambak (Media 2) -->
-          <div class="timeline-col reveal delay-100" style="text-align: left;">
+        <div class="quality-grid-row" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; align-items: stretch;">
+          <!-- Step 1: Panen & Sortir -->
+          <div class="timeline-col reveal delay-100" style="display: flex; flex-direction: column; text-align: left; height: 100%;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
               <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
                 <img src="/assets/images/qs-step-1.jpg" alt="Panen Tambak Berkelanjutan" loading="lazy" style="object-fit: cover; object-position: center;">
                 <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">qs-step-1.jpg</span></div>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">01</span> Panen &amp; Sortir
+            <div class="timeline-badge-row" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 0.92rem; margin-bottom: 0.85rem; padding: 0.45rem 1rem; border-radius: 30px; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); min-height: 48px; width: 100%;">
+              <span class="timeline-badge-circle" style="width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0;">01</span>
+              <span>Panen &amp; Sortir</span>
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Proses panen langsung dari tambak dengan seleksi ketat mutu kesegaran udang.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left; flex-grow: 1;">Proses panen langsung dari tambak dengan seleksi ketat mutu kesegaran udang.</p>
           </div>
 
-          <!-- Step 2: Pencucian Air Dingin & Sortir (Media 1) -->
-          <div class="timeline-col reveal delay-200" style="text-align: left;">
+          <!-- Step 2: Pencucian Air Dingin -->
+          <div class="timeline-col reveal delay-200" style="display: flex; flex-direction: column; text-align: left; height: 100%;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
               <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
                 <img src="/assets/images/qs-step-2.jpg" alt="Pencucian Air Dingin &amp; Sortir" loading="lazy" style="object-fit: cover; object-position: center;">
                 <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">qs-step-2.jpg</span></div>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">02</span> Pencucian Air Dingin
+            <div class="timeline-badge-row" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 0.92rem; margin-bottom: 0.85rem; padding: 0.45rem 1rem; border-radius: 30px; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); min-height: 48px; width: 100%;">
+              <span class="timeline-badge-circle" style="width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0;">02</span>
+              <span>Pencucian Air Dingin</span>
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pembersihan dan sortir manual menggunakan air dingin segar untuk menjaga keutuhan tekstur.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left; flex-grow: 1;">Pembersihan dan sortir manual menggunakan air dingin segar untuk menjaga keutuhan tekstur.</p>
           </div>
 
-          <!-- Step 3: Pembekuan Cepat Spiral IQF (Media 4) -->
-          <div class="timeline-col reveal delay-300" style="text-align: left;">
+          <!-- Step 3: Pembekuan Cepat -->
+          <div class="timeline-col reveal delay-300" style="display: flex; flex-direction: column; text-align: left; height: 100%;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
               <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
                 <img src="/assets/images/qs-step-3.jpg" alt="Pembekuan Cepat IQF" loading="lazy" style="object-fit: cover; object-position: center;">
                 <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">qs-step-3.jpg</span></div>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">03</span> Pembekuan Cepat
+            <div class="timeline-badge-row" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 0.92rem; margin-bottom: 0.85rem; padding: 0.45rem 1rem; border-radius: 30px; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); min-height: 48px; width: 100%;">
+              <span class="timeline-badge-circle" style="width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0;">03</span>
+              <span>Pembekuan Cepat</span>
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pembekuan cepat untuk mengunci rasa manis alami, kadar air, dan nutrisi udang segar.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left; flex-grow: 1;">Pembekuan cepat untuk mengunci rasa manis alami, kadar air, dan nutrisi udang segar.</p>
           </div>
 
-          <!-- Step 4: Distribusi & Cold Storage (Media 3) -->
-          <div class="timeline-col reveal delay-400" style="text-align: left;">
+          <!-- Step 4: Pengemasan & Distribusi -->
+          <div class="timeline-col reveal delay-400" style="display: flex; flex-direction: column; text-align: left; height: 100%;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
               <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
-                <img src="/assets/images/qs-step-4.jpg" alt="Distribusi Cold Storage Armada" loading="lazy" style="object-fit: cover; object-position: center;">
+                <img src="/assets/images/qs-step-4.jpg" alt="Pengemasan &amp; Distribusi Armada" loading="lazy" style="object-fit: cover; object-position: center;">
                 <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">qs-step-4.jpg</span></div>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">04</span> Cold Storage &amp; Pengiriman
+            <div class="timeline-badge-row" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 0.92rem; margin-bottom: 0.85rem; padding: 0.45rem 1rem; border-radius: 30px; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); min-height: 48px; width: 100%;">
+              <span class="timeline-badge-circle" style="width: 24px; height: 24px; border-radius: 50%; background: #FFFFFF; border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; flex-shrink: 0;">04</span>
+              <span>Pengemasan &amp; Distribusi</span>
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pengemasan rapi dan pengiriman dengan armada berpendingin khusus hingga ke pelanggan.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left; flex-grow: 1;">Pengemasan rapi dan pengiriman dengan armada berpendingin khusus hingga ke pelanggan.</p>
           </div>
         </div>
       </div>
