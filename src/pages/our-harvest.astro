@@ -231,56 +231,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <div class="quality-grid-row" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;">
           <!-- Step 1: With photo -->
-          <div class="timeline-col reveal delay-100">
+          <div class="timeline-col reveal delay-100" style="text-align: left;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
               <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
                 <img src="/assets/images/standar.jpg" alt="Sortir &amp; Grading Manual" loading="lazy" style="object-fit: cover; object-position: left top;">
                 <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">standar.jpg</span></div>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">01</span> Sortir &amp; Grading
+            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">01</span> Sortir &amp; Grading
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pemeriksaan awal kesegaran, keutuhan fisik, serta pemisahan ukuran udang sesuai spesifikasi.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pemeriksaan awal kesegaran, keutuhan fisik, serta pemisahan ukuran udang sesuai spesifikasi.</p>
           </div>
 
-          <!-- Step 2: Empty slot for user -->
-          <div class="timeline-col reveal delay-200">
+          <!-- Step 2: Empty slot with lively animation -->
+          <div class="timeline-col reveal delay-200" style="text-align: left;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
-              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
-                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">Tambah Foto Step 2</span></div>
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--color-primary-very-light) 0%, #e2f2e1 100%);">
+                <div class="img-slot-fallback" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; height: 100%;">
+                  <span class="slot-icon" style="font-size: 2rem; color: var(--color-primary); opacity: 0.75; animation: floatSlow 3s ease-in-out infinite alternate;"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                  <span class="slot-name" style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark);">Tambah Foto Step 2</span>
+                </div>
+                <!-- Animated Pulsing Glowing Nodes -->
+                <span class="floating-glow-dot dot-lime" style="width: 14px; height: 14px; top: 18%; right: 18%; animation-delay: 0s;"></span>
+                <span class="floating-glow-dot dot-sage" style="width: 16px; height: 16px; bottom: 18%; left: 18%; animation-delay: 1.2s;"></span>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">02</span> Pencucian &amp; Sanitasi
+            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">02</span> Pencucian Air Dingin
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pembersihan menggunakan air dingin higienis berstandar food safety untuk menjaga tekstur udang.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pembersihan menggunakan air dingin segar berstandar food safety untuk menjaga tekstur udang.</p>
           </div>
 
-          <!-- Step 3: Empty slot for user -->
-          <div class="timeline-col reveal delay-300">
+          <!-- Step 3: Empty slot with lively animation -->
+          <div class="timeline-col reveal delay-300" style="text-align: left;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
-              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
-                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">Tambah Foto Step 3</span></div>
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--color-primary-very-light) 0%, #e2f2e1 100%);">
+                <div class="img-slot-fallback" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; height: 100%;">
+                  <span class="slot-icon" style="font-size: 2rem; color: var(--color-primary); opacity: 0.75; animation: floatSlow 3.5s ease-in-out infinite alternate-reverse;"><i class="fa-solid fa-snowflake"></i></span>
+                  <span class="slot-name" style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark);">Tambah Foto Step 3</span>
+                </div>
+                <!-- Animated Pulsing Glowing Nodes -->
+                <span class="floating-glow-dot dot-primary" style="width: 14px; height: 14px; top: 15%; left: 20%; animation-delay: 0.6s;"></span>
+                <span class="floating-glow-dot dot-lime" style="width: 16px; height: 16px; bottom: 15%; right: 20%; animation-delay: 1.8s;"></span>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">03</span> Pembekuan Cepat
+            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">03</span> Pembekuan Cepat
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pembekuan cepat untuk mengunci rasa manis alami, kadar air alami, dan nutrisi udang segar.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pembekuan cepat untuk mengunci rasa manis alami, kadar air alami, dan nutrisi udang segar.</p>
           </div>
 
-          <!-- Step 4: Empty slot for user -->
-          <div class="timeline-col reveal delay-400">
+          <!-- Step 4: Empty slot with lively animation -->
+          <div class="timeline-col reveal delay-400" style="text-align: left;">
             <div class="timeline-img-box" style="margin-bottom: 1.25rem;">
-              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px;">
-                <div class="img-slot-fallback"><span class="slot-icon"><i class="fa-solid fa-camera"></i></span><span class="slot-name">Tambah Foto Step 4</span></div>
+              <div class="img-slot" style="height: 185px; min-height: 185px; max-height: 185px; border-radius: 18px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--color-primary-very-light) 0%, #e2f2e1 100%);">
+                <div class="img-slot-fallback" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; height: 100%;">
+                  <span class="slot-icon" style="font-size: 2rem; color: var(--color-primary); opacity: 0.75; animation: floatSlow 4s ease-in-out infinite alternate;"><i class="fa-solid fa-boxes-stacked"></i></span>
+                  <span class="slot-name" style="font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark);">Tambah Foto Step 4</span>
+                </div>
+                <!-- Animated Pulsing Glowing Nodes -->
+                <span class="floating-glow-dot dot-lime" style="width: 16px; height: 16px; top: 18%; left: 18%; animation-delay: 0.3s;"></span>
+                <span class="floating-glow-dot dot-sage" style="width: 14px; height: 14px; bottom: 18%; right: 18%; animation-delay: 2.1s;"></span>
               </div>
             </div>
-            <div class="timeline-badge-row" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem;">
-              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800;">04</span> Cold Storage
+            <div class="timeline-badge-row" style="display: flex; align-items: center; justify-content: flex-start; gap: 0.5rem; font-weight: 700; color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 0.5rem; text-align: left;">
+              <span class="timeline-badge-circle" style="width: 28px; height: 28px; border-radius: 50%; background: var(--color-primary-very-light); border: 1px solid var(--color-primary-light); color: var(--color-primary); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; flex-shrink: 0;">04</span> Cold Storage
             </div>
-            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0;">Pengemasan rapi dan penyimpanan suhu terkontrol ketat hingga siap dikirim ke konsumen.</p>
+            <p style="font-size: 0.9rem; line-height: 1.55; color: var(--color-text-light); margin-bottom: 0; text-align: left;">Pengemasan rapi dan penyimpanan suhu terkontrol ketat hingga siap dikirim ke konsumen.</p>
           </div>
         </div>
       </div>
