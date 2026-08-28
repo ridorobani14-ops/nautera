@@ -369,7 +369,7 @@ header.scrolled { background-color: #FFFFFF; box-shadow: 0 6px 28px rgba(35, 76,
 .giant-banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(18, 40, 16, 0.96) 0%, rgba(18, 40, 16, 0.88) 35%, rgba(18, 40, 16, 0.5) 60%, rgba(18, 40, 16, 0.12) 82%, transparent 100%);
+  background: linear-gradient(90deg, rgba(18, 40, 16, 0.98) 0%, rgba(18, 40, 16, 0.94) 48%, rgba(18, 40, 16, 0.85) 58%, rgba(18, 40, 16, 0.3) 75%, transparent 100%);
   z-index: 1;
   pointer-events: none;
 }
